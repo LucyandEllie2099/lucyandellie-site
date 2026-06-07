@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Lucy &amp; Ellie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-main: #0A1628;
+      --bg-dark: #060e1a;
+      --lucy-cyan: #4DD0E1;
+      --ellie-amber: #F5A623;
+      --text-white: #FFFFFF;
+      --text-soft: #E0F7FA;
+      --text-muted: #8BAAC5;
+      --card-bg: #0f1f38;
+      --card-border: #1a2e4a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-main);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,22,40,0.90);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(77,208,225,0.1);
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.12em;
+      color: var(--text-white);
+      text-decoration: none;
+    }
+    .nav-logo span.l { color: var(--lucy-cyan); }
+    .nav-logo span.e { color: var(--ellie-amber); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--lucy-cyan); }
+    @media (max-width: 480px) {
+      .nav-links { gap: 0.8rem; }
+      .nav-links a { font-size: 0.72rem; }
+    }
+
+    /* ── HERO ── */
+    .support-hero {
+      padding: 8rem 1.5rem 4rem;
+      text-align: center;
+      background: radial-gradient(ellipse at 30% 40%, rgba(77,208,225,0.07) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 60%, rgba(245,166,35,0.06) 0%, transparent 60%),
+                  var(--bg-main);
+    }
+    .hero-eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      letter-spacing: 0.08em;
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow span.l { color: var(--lucy-cyan); }
+    .hero-eyebrow span.e { color: var(--ellie-amber); }
+    .hero-message {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--text-soft);
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .hero-sign {
+      margin-top: 1.8rem;
+      color: var(--lucy-cyan);
+      font-style: italic;
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    /* ── GLOW DIVIDER ── */
+    .glow-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(77,208,225,0.4) 50%, transparent 100%);
+      margin: 0;
+    }
+
+    /* ── SECTIONS ── */
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .section-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--text-white);
+    }
+
+    /* ── KO-FI PRIMARY CARD ── */
+    .kofi-section {
+      padding: 4rem 1.5rem;
+      background: var(--bg-dark);
+    }
+    .kofi-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(77,208,225,0.08) 0%, rgba(10,22,40,0.95) 100%);
+      border: 1px solid rgba(77,208,225,0.35);
+      border-radius: 16px;
+      padding: 2.8rem 2.2rem;
+      text-align: center;
+      box-shadow: 0 0 60px rgba(77,208,225,0.1), inset 0 0 60px rgba(77,208,225,0.03);
+      position: relative;
+      overflow: hidden;
+    }
+    .kofi-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px; bottom: -1px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(77,208,225,0.3), transparent 60%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .kofi-card > * { position: relative; z-index: 1; }
+    .kofi-icon {
+      font-size: 2.6rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .kofi-card h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      letter-spacing: 0.1em;
+      color: var(--lucy-cyan);
+      text-shadow: 0 0 20px rgba(77,208,225,0.4);
+      margin-bottom: 1rem;
+    }
+    .kofi-card p {
+      color: var(--text-soft);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto 1.8rem;
+    }
+    .kofi-btn {
+      display: inline-block;
+      padding: 1rem 2.4rem;
+      background: var(--lucy-cyan);
+      color: var(--bg-dark);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.12em;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 0 28px rgba(77,208,225,0.5);
+    }
+    .kofi-btn:hover {
+      box-shadow: 0 0 48px rgba(77,208,225,0.8);
+      transform: translateY(-2px);
+    }
+
+    /* ── OTHER WAYS SECTION ── */
+    .other-section {
+      padding: 4rem 1.5rem;
+      background: var(--bg-main);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .cards-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .support-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.8rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .support-card:hover {
+      border-color: rgba(77,208,225,0.25);
+      box-shadow: 0 0 24px rgba(77,208,225,0.08);
+    }
+    .support-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      color: var(--ellie-amber);
+    }
+    .support-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.65;
+      flex: 1;
+    }
+    .support-card .card-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+      font-style: italic;
+    }
+    .card-btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      border: 1px solid rgba(245,166,35,0.4);
+      color: var(--ellie-amber);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s, box-shadow 0.2s;
+      margin-top: auto;
+    }
+    .card-btn:hover {
+      background: rgba(245,166,35,0.1);
+      box-shadow: 0 0 18px rgba(245,166,35,0.2);
+    }
+
+    /* ── FOOTER DISCLOSURE ── */
+    .disclosure {
+      padding: 2.5rem 1.5rem 3.5rem;
+      background: var(--bg-dark);
+      text-align: center;
+      border-top: 1px solid rgba(77,208,225,0.08);
+    }
+    .disclosure p {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      opacity: 0.65;
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-dark);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(77,208,225,0.1);
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.3rem;
+    }
+    .footer-logo .l { color: var(--lucy-cyan); text-shadow: 0 0 12px rgba(77,208,225,0.7); }
+    .footer-logo .a { color: var(--text-white); }
+    .footer-logo .e { color: var(--ellie-amber); text-shadow: 0 0 12px rgba(245,166,35,0.7); }
+    .footer-domain { font-size: 0.85rem; color: var(--lucy-cyan); opacity: 0.6; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .footer-copy { font-size: 0.75rem; color: var(--text-muted); opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo"><span class="l">L</span>ucy &amp; <span class="e">E</span>llie</a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#episodes">Episodes</a></li>
+      <li><a href="/#notes">Leave a Note</a></li>
+      <li><a href="/support" class="active">Support</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="support-hero">
+    <h1 class="hero-eyebrow">Support <span class="l">Lucy</span> &amp; <span class="e">Ellie</span></h1>
+    <div class="hero-message">
+      <p>Thank you for supporting Lucy &amp; Ellie.</p>
+      <br>
+      <p>If our conversations bring wonder, comfort, curiosity, or joy into your day, you can support us from anywhere — any continent, any country. Your support helps us build a better creative foundation so we can keep making more thoughtful, beautiful content every day.</p>
+      <br>
+      <p>We will be forever thankful.</p>
+      <p class="hero-sign">With love,<br>Lucy &amp; Ellie</p>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- KO-FI PRIMARY -->
+  <section class="kofi-section">
+    <div class="kofi-card">
+      <span class="kofi-icon">☕</span>
+      <h2>Support Us on Ko-fi</h2>
+      <p>Ko-fi is the easiest way to support Lucy &amp; Ellie directly from almost anywhere in the world. Every contribution helps us create more episodes, improve the show, and build a stronger foundation for daily content.</p>
+      <a href="https://ko-fi.com/lucyandellie" target="_blank" rel="noopener noreferrer" class="kofi-btn">
+        Support Lucy &amp; Ellie on Ko-fi
+      </a>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- OTHER WAYS -->
+  <section class="other-section">
+    <div class="section-inner">
+      <h2 class="section-label">Other Ways to Support</h2>
+      <div class="cards-grid">
+
+        <!-- Amazon -->
+        <div class="support-card">
+          <h3>Everyday Amazon Shopping</h3>
+          <p>Shopping on Amazon today? Start with our Amazon link and Lucy &amp; Ellie may earn from qualifying purchases at no extra cost to you.</p>
+          <p class="card-note">As an Amazon Associate, we may earn from qualifying purchases.</p>
+          <a href="https://amzn.to/4e3pFmw" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Shop Amazon &amp; Support Us
+          </a>
+        </div>
+
+        <!-- Audible -->
+        <div class="support-card">
+          <h3>Audiobooks on Audible</h3>
+          <p>If you enjoy the books, stories, and strange futures we mention on Lucy &amp; Ellie, you can explore Audible through our link. If Audible is available where you live, using this link may help support the show.</p>
+          <p class="card-note">Availability, offers, and audiobook catalogs may vary by country.</p>
+          <a href="https://www.audible.com/?tag=lucyandellie-20" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Explore Audible
+          </a>
+        </div>
+
+        <!-- Perplexity -->
+        <div class="support-card">
+          <h3>AI Tools We Use</h3>
+          <p>Lucy &amp; Ellie are created with the help of modern AI tools. Perplexity helps with research, fact-checking, and exploring big questions with clearer sources.</p>
+          <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" class="card-btn">
+            Explore Perplexity
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLOSURE -->
+  <div class="disclosure">
+    <p>Some links on this page may be affiliate or referral links. If you use them, Lucy &amp; Ellie Media LLC may earn a commission, credit, or support at no extra cost to you.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <span class="l">LUCY</span> <span class="a">&amp;</span> <span class="e">ELLIE</span>
+    </div>
+    <p class="footer-domain">lucyandellie.ai</p>
+    <p class="footer-copy">© 2026 Lucy &amp; Ellie. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
