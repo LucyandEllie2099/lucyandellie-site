@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Here | Lucy &amp; Ellie</title>
+  <meta name="description" content="New to Lucy & Ellie? Start with the audio trailer. A science & sci-fi podcast hosted by two AI voices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-main:    #0A1628;
+      --bg-dark:    #060e1a;
+      --bg-card:    #0f1f38;
+      --card-border:#1a2e4a;
+      --lucy-cyan:  #4DD0E1;
+      --ellie-amber:#F5A623;
+      --text-white: #FFFFFF;
+      --text-soft:  #E0F7FA;
+      --text-muted: #8BAAC5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-main);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ── BACKGROUND GLOW ── */
+    .page-wrap {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 0 1.25rem 3rem;
+      position: relative;
+    }
+    .page-wrap::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(77,208,225,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 70%, rgba(245,166,35,0.05) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .banner-img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto 1rem;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 0 40px rgba(77,208,225,0.12);
+    }
+
+    .podcast-card {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto 1.5rem;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 0 20px rgba(77,208,225,0.10);
+      object-fit: cover;
+    }
+
+    /* ── HEADLINE ── */
+    .headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.6rem, 10vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      color: var(--text-white);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .headline span { color: var(--lucy-cyan); }
+
+    .subheadline {
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      color: var(--text-soft);
+      font-weight: 300;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── PLAY BUTTON ── */
+    .play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 2rem;
+      background: var(--lucy-cyan);
+      color: #0A1628;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      box-shadow: 0 0 28px rgba(77,208,225,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 360px;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .play-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 44px rgba(77,208,225,0.65);
+    }
+    .play-btn svg { flex-shrink: 0; }
+
+    /* ── AUDIO PLAYER ── */
+    .audio-wrap {
+      display: none;
+      margin: 1.2rem auto 0;
+      max-width: 360px;
+      position: relative;
+      z-index: 1;
+    }
+    .audio-wrap.visible { display: block; }
+    .audio-wrap audio {
+      width: 100%;
+      border-radius: 8px;
+      outline: none;
+      accent-color: var(--lucy-cyan);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--card-border), transparent);
+      margin: 2.5rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── PLATFORM BUTTONS ── */
+    .platform-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .platform-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.02em;
+      width: 100%;
+      justify-content: center;
+    }
+    .platform-btn:hover { transform: translateY(-2px); }
+    .platform-btn svg { flex-shrink: 0; }
+
+    .platform-btn.apple {
+      background: #000;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    .platform-btn.apple:hover { box-shadow: 0 0 32px rgba(255,255,255,0.18); }
+
+    .platform-btn.spotify {
+      background: #1DB954;
+      color: #000;
+      box-shadow: 0 0 20px rgba(29,185,84,0.35);
+    }
+    .platform-btn.spotify:hover { box-shadow: 0 0 32px rgba(29,185,84,0.6); }
+
+    .platform-btn.amazon {
+      background: #232F3E;
+      color: #FF9900;
+      border: 1px solid rgba(255,153,0,0.3);
+      box-shadow: 0 0 20px rgba(255,153,0,0.2);
+    }
+    .platform-btn.amazon:hover { box-shadow: 0 0 32px rgba(255,153,0,0.5); }
+
+    .platform-btn.podchaser {
+      background: #F54B25;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(245,75,37,0.3);
+    }
+    .platform-btn.podchaser:hover { box-shadow: 0 0 32px rgba(245,75,37,0.5); }
+
+    .platform-btn.podcastaddict {
+      background: #F1671A;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(241,103,26,0.3);
+    }
+    .platform-btn.podcastaddict:hover { box-shadow: 0 0 32px rgba(241,103,26,0.5); }
+
+    /* ── FOOTER LINK ── */
+    .site-link {
+      text-align: center;
+      margin-top: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .site-link p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .site-link a {
+      color: var(--lucy-cyan);
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .site-link a:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="hero">
+
+      <!-- Banner -->
+      <img
+        src="/assets/lucy_ellie_title.png"
+        alt="Lucy & Ellie Podcast"
+        class="banner-img"
+        loading="eager"
+      />
+
+      <!-- Podcast card -->
+      <img
+        src="/assets/podcast_card.jpg"
+        alt="Lucy & Ellie Podcast Cover"
+        class="podcast-card"
+        loading="eager"
+      />
+
+      <!-- Headline -->
+      <h1 class="headline">New to <span>Lucy &amp; Ellie?</span></h1>
+      <p class="headline" style="font-size:clamp(1.4rem,5vw,2rem);color:var(--text-soft);font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.01em;margin-bottom:1rem;">Start with the audio trailer.</p>
+
+      <!-- Subheadline -->
+      <p class="subheadline">
+        Lucy &amp; Ellie is a science &amp; sci-fi podcast where two AI voices explore
+        space, artificial intelligence, mysteries, strange worlds, future tech,
+        thought experiments, and the future of humanity.
+      </p>
+
+      <!-- Play button -->
+      <button class="play-btn" id="playBtn" onclick="startTrailer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A1628">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        Play Audio Trailer Now
+      </button>
+
+      <!-- Audio player (hidden until play clicked) -->
+      <div class="audio-wrap" id="audioWrap">
+        <audio id="trailerAudio" controls preload="none">
+          <source src="/assets/trailer_audio.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    </div><!-- /hero -->
+
+    <div class="divider"></div>
+
+    <!-- Platform buttons -->
+    <p class="section-label">Continue listening on</p>
+    <div class="platform-btns">
+
+      <a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680?utm_source=start_page&utm_medium=button&utm_campaign=trailer"
+         target="_blank" rel="noopener noreferrer" class="platform-btn apple">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 3.5a4.5 4.5 0 0 1 4.5 4.5c0 1.13-.418 2.162-1.105 2.95.304.587.605 1.338.605 2.3 0 2.071-1.343 3.25-3 3.25-.438 0-.86-.09-1.25-.25v.5a.75.75 0 0 1-1.5 0v-.5c-.39.16-.812.25-1.25.25-1.657 0-3-1.179-3-3.25 0-.962.3-1.713.605-2.3A4.481 4.481 0 0 1 7.5 9.5 4.5 4.5 0 0 1 12 5.5z"/>
+        </svg>
+        Listen on Apple Podcasts
+      </a>
+
+      <a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH?utm_source=start_page&utm_medium=button&utm_campaign=trailer"
+         target="_blank" rel="noopener noreferrer" class="platform-btn spotify">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="black">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .519-.972c3.632-1.102 8.147-.568 11.234 1.328a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.541-1.073 9.434-.866 13.157 1.368a.937.937 0 0 1-.997 1.582z"/>
+        </svg>
+        Listen on Spotify
+      </a>
+
+      <a href="https://music.amazon.com/podcasts/bde9ee8e-212e-436c-b9d8-9a42397da803/lucy-ellie?utm_source=start_page&utm_medium=button&utm_campaign=trailer"
+         target="_blank" rel="noopener noreferrer" class="platform-btn amazon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF9900">
+          <path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705a.66.66 0 0 1-.757.08c-1.063-.886-1.252-1.296-1.836-2.143-1.757 1.792-3.001 2.327-5.277 2.327-2.694 0-4.794-1.663-4.794-4.992 0-2.6 1.409-4.37 3.419-5.237 1.74-.769 4.17-.905 6.025-1.115v-.416c0-.765.06-1.667-.392-2.327-.392-.591-1.145-.836-1.812-.836-1.231 0-2.327.631-2.596 1.939-.055.292-.269.58-.562.594l-3.147-.339c-.265-.06-.559-.273-.484-.679C5.578 1.96 8.763 1 11.6 1c1.45 0 3.347.386 4.491 1.485 1.451 1.354 1.312 3.162 1.312 5.128v4.647c0 1.396.579 2.01 1.124 2.765.193.271.235.596-.01.799l-2.373 2.97z"/>
+          <path d="M20.985 19.682c-2.704 1.979-6.62 3.033-9.998 3.033-4.73 0-8.983-1.749-12.2-4.657-.253-.228-.027-.54.277-.363 3.474 2.023 7.767 3.24 12.203 3.24 2.992 0 6.282-.621 9.312-1.906.457-.195.840.301.406.653z"/>
+          <path d="M22.026 18.484c-.344-.441-2.284-.208-3.154-.105-.265.033-.306-.198-.067-.365 1.545-1.086 4.08-.773 4.374-.409.296.367-.077 2.907-1.527 4.118-.223.187-.435.087-.336-.159.325-.812 1.054-2.638.71-3.08z"/>
+        </svg>
+        Listen on Amazon Music
+      </a>
+
+      <a href="https://www.podchaser.com/podcasts/lucy-ellie-6507685?utm_source=start_page&utm_medium=button&utm_campaign=trailer"
+         target="_blank" rel="noopener noreferrer" class="platform-btn podchaser">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+        </svg>
+        Listen on Podchaser
+      </a>
+
+      <a href="https://podcastaddict.com/podcast/lucy-ellie/7071949?utm_source=start_page&utm_medium=button&utm_campaign=trailer"
+         target="_blank" rel="noopener noreferrer" class="platform-btn podcastaddict">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+        </svg>
+        Listen on Podcast Addict
+      </a>
+
+    </div><!-- /platform-btns -->
+
+    <!-- Footer link -->
+    <div class="site-link">
+      <p>Want to explore the full site?</p>
+      <a href="https://lucyandellie.ai">Visit lucyandellie.ai</a>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+  <script>
+    function startTrailer() {
+      const btn   = document.getElementById('playBtn');
+      const wrap  = document.getElementById('audioWrap');
+      const audio = document.getElementById('trailerAudio');
+
+      // Show player
+      wrap.classList.add('visible');
+
+      // Start playback
+      audio.play().catch(() => {
+        // Autoplay blocked — player is still visible so user can press play manually
+      });
+
+      // Update button to reflect playing state
+      btn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A1628">
+          <path d="M6 19h4V5H6zm8-14v14h4V5z"/>
+        </svg>
+        Now Playing — Click Player to Pause
+      `;
+      btn.style.opacity = '0.65';
+      btn.style.cursor  = 'default';
+      btn.onclick = null;
+    }
+  </script>
+</body>
+</html>
