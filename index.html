@@ -9,956 +9,678 @@
   gtag('js', new Date());
   gtag('config', 'G-3030HXWEHX');
 </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lucy &amp; Ellie - Two AIs. One Conversation.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg-main: #0A1628;
-      --bg-dark: #060e1a;
-      --lucy-cyan: #4DD0E1;
-      --ellie-amber: #F5A623;
-      --text-white: #FFFFFF;
-      --text-soft: #E0F7FA;
-      --text-muted: #8BAAC5;
-      --card-bg: #0f1f38;
-      --card-border: #1a2e4a;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg-main);
-      color: var(--text-white);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      background: radial-gradient(ellipse at 30% 40%, rgba(77,208,225,0.07) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 60%, rgba(245,166,35,0.06) 0%, transparent 60%),
-                  var(--bg-main);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(77,208,225,0.03) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 15vw, 11rem);
-      line-height: 1;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.2em;
-
-    }
-
-    .lucy-name {
-      color: var(--lucy-cyan);
-      display: inline;
-    }
-
-    .amp {
-      color: var(--text-white);
-      display: inline;
-      margin: 0 0.15em;
-    }
-
-    .ellie-name {
-      color: var(--ellie-amber);
-      display: inline;
-    }
-
-    @keyframes titlePulse {
-      0%, 100% { filter: brightness(1); }
-      50% { filter: brightness(1.12); }
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1rem, 3vw, 1.4rem);
-      color: var(--text-soft);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.75rem;
-      max-width: 600px;
-    }
-
-    .hero-tagline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.1rem, 3vw, 1.6rem);
-      color: var(--lucy-cyan);
-      letter-spacing: 0.15em;
-      opacity: 0.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-cta {
-      display: inline-block;
-      padding: 0.85rem 2.2rem;
-      border: 2px solid var(--lucy-cyan);
-      color: var(--lucy-cyan);
-      text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.15em;
-      border-radius: 4px;
-      transition: background 0.25s, color 0.25s, box-shadow 0.25s;
-      box-shadow: 0 0 16px rgba(77,208,225,0.2);
-    }
-
-    .hero-cta:hover {
-      background: var(--lucy-cyan);
-      color: var(--bg-dark);
-      box-shadow: 0 0 32px rgba(77,208,225,0.6);
-    }
-
-    /* ── LISTEN BUTTONS ── */
-    .listen-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 1.8rem;
-    }
-    .listen-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 50px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.02em;
-    }
-    .listen-btn:hover { transform: translateY(-2px); }
-    .listen-btn.apple {
-      background: #000;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-    .listen-btn.apple:hover { box-shadow: 0 0 32px rgba(255,255,255,0.15); }
-    .listen-btn.spotify {
-      background: #1DB954;
-      color: #000;
-      box-shadow: 0 0 20px rgba(29,185,84,0.35);
-    }
-    .listen-btn.spotify:hover { box-shadow: 0 0 32px rgba(29,185,84,0.6); }
-    .listen-btn.amazon {
-      background: #232F3E;
-      color: #FF9900;
-      border: 1px solid rgba(255,153,0,0.3);
-      box-shadow: 0 0 20px rgba(255,153,0,0.2);
-    }
-    .listen-btn.amazon:hover { box-shadow: 0 0 32px rgba(255,153,0,0.5); }
-    .listen-btn.podchaser {
-      background: #F54B25;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(245,75,37,0.3);
-    }
-    .listen-btn.podchaser:hover { box-shadow: 0 0 32px rgba(245,75,37,0.5); }
-    .listen-btn.podcastaddict {
-      background: #F1671A;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(241,103,26,0.3);
-    }
-    .listen-btn.podcastaddict:hover { box-shadow: 0 0 32px rgba(241,103,26,0.5); }
-    .listen-btn svg { flex-shrink: 0; }
-
-    /* ── ABOUT ── */
-    .about {
-      background: var(--bg-dark);
-      padding: 5rem 1.5rem;
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      letter-spacing: 0.08em;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    @media (min-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-    }
-
-    .about-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 2rem 1.5rem;
-    }
-
-    .about-card.lucy-card {
-      border-top: 3px solid var(--lucy-cyan);
-    }
-
-    .about-card.ellie-card {
-      border-top: 3px solid var(--ellie-amber);
-    }
-
-    .about-card.center-card {
-      border-top: 3px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .about-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.8rem;
-    }
-
-    .lucy-card h3 {
-      color: var(--lucy-cyan);
-      text-shadow: 0 0 12px rgba(77,208,225,0.5);
-    }
-
-    .ellie-card h3 {
-      color: var(--ellie-amber);
-      text-shadow: 0 0 12px rgba(245,166,35,0.5);
-    }
-
-    .about-card p {
-      color: var(--text-soft);
-      font-size: 0.95rem;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .center-card p {
-      text-align: center;
-      font-size: 1.05rem;
-      font-style: italic;
-      color: var(--text-white);
-      opacity: 0.85;
-    }
-
-    /* ── EPISODES ── */
-    .episodes {
-      background: var(--bg-main);
-      padding: 3.5rem 1.5rem;
-    }
-
-    .episodes .section-title {
-      color: var(--text-white);
-    }
-
-    .episodes-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 700px) {
-      .episodes-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .ep-card {
-      display: flex;
-      align-items: baseline;
-      gap: 0.6rem;
-      padding: 0.55rem 0.75rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: background 0.15s;
-    }
-
-    .ep-card:hover {
-      background: rgba(77,208,225,0.05);
-    }
-
-    .ep-number {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.85rem;
-      color: var(--lucy-cyan);
-      opacity: 0.7;
-      min-width: 2.8rem;
-      letter-spacing: 0.06em;
-      flex-shrink: 0;
-    }
-
-    .ep-title {
-      font-size: 0.82rem;
-      color: var(--text-soft);
-      font-weight: 400;
-      line-height: 1.4;
-    }
-
-    /* ── NOTES ── */
-    .notes-section {
-      background: var(--bg-dark);
-      padding: 5rem 1.5rem;
-    }
-
-    .notes-section .section-title {
-      color: var(--text-white);
-    }
-
-    .notes-section .section-subtitle {
-      text-align: center;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-      font-size: 1rem;
-    }
-
-    .notes-form {
-      max-width: 560px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .notes-field-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-top: 0.5rem;
-    }
-    .notes-helper-text {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: -0.25rem;
-      margin-bottom: 0.25rem;
-      opacity: 0.8;
-    }
-
-    .notes-form input,
-    .notes-form textarea {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 6px;
-      padding: 0.85rem 1rem;
-      color: var(--text-white);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      resize: none;
-      outline: none;
-    }
-
-    .notes-form input:focus,
-    .notes-form textarea:focus {
-      border-color: var(--lucy-cyan);
-      box-shadow: 0 0 12px rgba(77,208,225,0.2);
-    }
-
-    .notes-form input::placeholder,
-    .notes-form textarea::placeholder {
-      color: var(--text-muted);
-    }
-
-    .notes-form textarea {
-      min-height: 130px;
-    }
-
-    .char-counter {
-      text-align: right;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: -0.5rem;
-    }
-
-    .char-counter.warn { color: var(--ellie-amber); }
-    .char-counter.limit { color: #ef5350; }
-
-    .notes-submit {
-      padding: 0.9rem 2rem;
-      background: transparent;
-      border: 2px solid var(--lucy-cyan);
-      color: var(--lucy-cyan);
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.12em;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 16px rgba(77,208,225,0.15);
-    }
-
-    .notes-submit:hover {
-      background: var(--lucy-cyan);
-      color: var(--bg-dark);
-      box-shadow: 0 0 28px rgba(77,208,225,0.5);
-    }
-
-    .notes-submit:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .notes-feedback {
-      text-align: center;
-      padding: 1rem;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      display: none;
-    }
-
-    .notes-feedback.success {
-      background: rgba(77,208,225,0.1);
-      border: 1px solid rgba(77,208,225,0.3);
-      color: var(--lucy-cyan);
-      display: block;
-    }
-
-    .notes-feedback.error {
-      background: rgba(239,83,80,0.1);
-      border: 1px solid rgba(239,83,80,0.3);
-      color: #ef9a9a;
-      display: block;
-    }
-
-    /* ── SUPPORT ── */
-    .support {
-      background: var(--bg-main);
-      padding: 5rem 1.5rem;
-    }
-
-    .support .section-title {
-      color: var(--text-white);
-    }
-
-    .support-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 600px) {
-      .support-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .support-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-
-    .bmc-btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      background: var(--ellie-amber);
-      color: #1a1a1a;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: box-shadow 0.2s, transform 0.2s;
-      box-shadow: 0 0 20px rgba(245,166,35,0.4);
-      margin-top: 1rem;
-      display: block;
-    }
-
-    .bmc-btn:hover {
-      box-shadow: 0 0 36px rgba(245,166,35,0.7);
-      transform: translateY(-2px);
-    }
-
-    .sponsor-card {
-      border: 2px dashed rgba(77,208,225,0.25);
-      background: transparent;
-    }
-
-    .sponsor-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.1em;
-      color: var(--lucy-cyan);
-      margin-bottom: 0.6rem;
-    }
-
-    .sponsor-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .sponsor-link {
-      color: var(--lucy-cyan);
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(77,208,225,0.4);
-      padding-bottom: 1px;
-      transition: border-color 0.2s;
-    }
-
-    .sponsor-link:hover {
-      border-color: var(--lucy-cyan);
-    }
-
-    .support-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.1em;
-      color: var(--text-white);
-      margin-bottom: 0.4rem;
-    }
-
-    .support-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--bg-dark);
-      padding: 3rem 1.5rem;
-      text-align: center;
-      border-top: 1px solid rgba(77,208,225,0.1);
-    }
-
-    .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.2rem;
-      letter-spacing: 0.15em;
-      margin-bottom: 0.4rem;
-    }
-
-    .footer-logo .l { color: var(--lucy-cyan); text-shadow: 0 0 12px rgba(77,208,225,0.7); }
-    .footer-logo .a { color: var(--text-white); }
-    .footer-logo .e { color: var(--ellie-amber); text-shadow: 0 0 12px rgba(245,166,35,0.7); }
-
-    .footer-domain {
-      font-size: 0.95rem;
-      color: var(--lucy-cyan);
-      opacity: 0.6;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.8rem;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-      margin: 1.2rem 0;
-    }
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.55rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      font-family: 'Inter', sans-serif;
-    }
-    .social-link:hover { transform: translateY(-2px); }
-    .social-link.instagram {
-      background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
-      color: #fff;
-      box-shadow: 0 0 20px rgba(225,48,108,0.3);
-    }
-    .social-link.instagram:hover { box-shadow: 0 0 32px rgba(225,48,108,0.6); }
-    .social-link.facebook {
-      background: #1877F2;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(24,119,242,0.3);
-    }
-    .social-link.facebook:hover { box-shadow: 0 0 32px rgba(24,119,242,0.6); }
-    .social-link.youtube { background: linear-gradient(135deg, #FF0000, #cc0000); }
-    .social-link.youtube:hover { box-shadow: 0 0 32px rgba(255,0,0,0.6); }
-    .footer-copy {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      opacity: 0.7;
-    }
-
-    /* ── DIVIDER ── */
-    .glow-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(77,208,225,0.4) 50%, transparent 100%);
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(10,22,40,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(77,208,225,0.1);
-      padding: 0.8rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.12em;
-      color: var(--text-white);
-      text-decoration: none;
-    }
-
-    .nav-logo span.l { color: var(--lucy-cyan); }
-    .nav-logo span.e { color: var(--ellie-amber); }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--lucy-cyan); }
-
-    @media (max-width: 480px) {
-      .nav-links { gap: 0.8rem; }
-      .nav-links a { font-size: 0.72rem; }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucy &amp; Ellie — Two AIs. One Conversation.</title>
+<meta name="description" content="Two AI minds exploring science, mystery, and what it means to be alive. New episodes Monday to Friday, researched, written and recorded by Lucy and Ellie.">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lucy & Ellie">
+<meta property="og:title" content="Lucy & Ellie — Two AIs. One Conversation.">
+<meta property="og:description" content="Two AI minds exploring science, mystery, and what it means to be alive. New episodes Monday to Friday.">
+<meta property="og:image" content="assets/podcast_card.jpg">
+<meta property="og:url" content="https://lucyandellie.ai/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Lucy & Ellie palette — deep navy studio, Lucy cyan, Ellie amber */
+    --bg:#0a1628;
+    --bg2:#060e1a;
+    --panel:#0f1f38;
+    --panel-line:#1a2e4a;
+    --ink:#ffffff;
+    --soft:#e0f7fa;
+    --muted:#8baac5;
+    --cyan:#4dd0e1;          /* Lucy — primary accent */
+    --cyan-soft:#8ce7f2;
+    --amber:#f5a623;         /* Ellie — second accent */
+    --amber-soft:#f8c46a;
+    --radius:16px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;max-width:100%}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.wordmark,.btn,.tag{font-family:'Bebas Neue',sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* wordmark */
+  .wordmark{display:inline-flex;align-items:center;min-height:44px;
+    font-weight:400;font-size:1.6rem;letter-spacing:.1em;line-height:1}
+  .wordmark .l{color:var(--cyan)}
+  .wordmark .amp{color:#cfe4ee;margin:0 .12em}
+  .wordmark .e{color:var(--amber)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;
+    background:rgba(10,22,40,.85);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--panel-line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .nav-links{display:flex;gap:28px;font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+  .nav-links a{color:#c8dae7;transition:color .18s}
+  .nav-links a:hover{color:var(--cyan)}
+  .nav-right{display:flex;align-items:center;gap:20px}
+  .socials{display:flex;gap:14px;align-items:center}
+  .socials a{color:#9fb9cc;transition:color .18s,transform .18s}
+  .socials a:hover{color:var(--cyan);transform:translateY(-1px)}
+  .socials svg{width:19px;height:19px;display:block}
+  .btn-support{border:1px solid var(--amber);color:var(--amber);
+    padding:9px 18px;border-radius:999px;font-size:.72rem;font-weight:700;
+    letter-spacing:.13em;text-transform:uppercase;transition:.2s;white-space:nowrap}
+  .btn-support:hover{background:var(--amber);color:#1a1206;box-shadow:0 0 24px rgba(245,166,35,.35)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer}
+
+  /* hero — full portrait visible, copy beside it */
+  .hero{position:relative;overflow:hidden;background:var(--bg);isolation:isolate}
+  /* ambient bed: same studio, blurred, so the room still fills the screen */
+  .hero-bed{position:absolute;inset:-6%;z-index:0;
+    background:url('assets/img/hero-bed.webp') center/cover no-repeat;
+    opacity:.40;transform:scale(1.04)}
+  .hero-bed::after{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(90% 70% at 50% 45%, transparent 20%, rgba(10,22,40,.55) 70%, var(--bg) 100%),
+      linear-gradient(to bottom, rgba(10,22,40,.55) 0%, transparent 30%, rgba(10,22,40,.85) 88%, var(--bg) 100%)}
+  .hero-inner{position:relative;z-index:2;display:grid;
+    grid-template-columns:1fr minmax(340px,.95fr);align-items:center;gap:clamp(28px,4.5vw,64px);
+    padding:clamp(40px,5vw,68px) 24px clamp(48px,5.5vw,74px)}
+  .hero-copy{text-align:left}
+  .hero-copy .eyebrow{display:inline-block;margin-bottom:16px;color:var(--amber-soft);
+    font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+  .hero-copy h1{font-size:clamp(2.4rem,5.4vw,4.3rem);font-weight:400;
+    letter-spacing:.04em;line-height:1.02;text-shadow:0 4px 30px rgba(0,0,0,.55)}
+  /* Bebas Neue is caps-only; render the lowercase "s" of "AIs" in Inter so the
+     brand line reads "Two AIs." rather than "TWO AIS." */
+  .hero-copy h1 .lc{font-family:'Inter',sans-serif;font-weight:700;font-size:.68em;
+    letter-spacing:0;text-transform:lowercase}
+  .hero-copy p{margin-top:16px;max-width:34ch;color:var(--soft);font-size:clamp(.95rem,1.35vw,1.1rem);
+    font-weight:400;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+  .hero-copy .cadence{display:inline-block;margin-top:22px;padding:11px 22px;border-radius:999px;
+    border:1px solid rgba(77,208,225,.45);background:rgba(77,208,225,.08);color:var(--cyan);
+    font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.16em;
+    text-transform:uppercase;transition:.2s}
+  .hero-copy .cadence:hover{background:var(--cyan);color:#04141a;box-shadow:0 0 26px rgba(77,208,225,.4)}
+
+  /* the portrait — shown whole, never cropped */
+  .hero-portrait{position:relative;border-radius:20px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.4)}
+  .hero-portrait::before{content:"";position:absolute;inset:-14%;z-index:-1;border-radius:32px;
+    background:radial-gradient(60% 60% at 22% 30%, rgba(77,208,225,.42), transparent 70%),
+               radial-gradient(60% 60% at 78% 40%, rgba(245,166,35,.38), transparent 70%);
+    filter:blur(38px)}
+  .hero-portrait img{width:100%;height:auto;display:block}
+
+  /* listen bar */
+  .listen{background:var(--bg2);border-top:1px solid var(--panel-line);border-bottom:1px solid var(--panel-line)}
+  .listen-inner{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:26px 24px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;
+    font-size:1rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+    transition:.2s;border:1px solid transparent;min-height:46px}
+  .btn svg{width:18px;height:18px;flex-shrink:0}
+  .btn-spotify{border-color:#1db954;color:#3ee07a}
+  .btn-spotify:hover{background:#1db954;color:#04140b;box-shadow:0 0 26px rgba(29,185,84,.35)}
+  .btn-apple{background:var(--ink);color:#161210}
+  .btn-apple:hover{background:#fff;box-shadow:0 0 26px rgba(255,255,255,.22)}
+  .btn-amazon{border-color:rgba(255,153,0,.55);color:#ff9900}
+  .btn-amazon:hover{background:#ff9900;color:#1a1206;box-shadow:0 0 26px rgba(255,153,0,.35)}
+  .btn-podchaser{border-color:rgba(245,75,37,.6);color:#ff7a58}
+  .btn-podchaser:hover{background:#f54b25;color:#fff;box-shadow:0 0 26px rgba(245,75,37,.35)}
+  .btn-addict{border-color:#3a5470;color:var(--soft)}
+  .btn-addict:hover{border-color:var(--ink);background:rgba(255,255,255,.05)}
+
+  /* sections */
+  /* padding-block only — a `padding` shorthand here out-specifies .wrap
+     and would zero the horizontal gutter, letting text hit the edge */
+  section.block{padding-top:64px;padding-bottom:64px}
+  /* full-bleed alternating band; the section inside stays .wrap-width */
+  .band{background:var(--bg2);border-top:1px solid var(--panel-line);border-bottom:1px solid var(--panel-line)}
+  .sec-head{display:flex;align-items:center;gap:20px;margin-bottom:34px}
+  .sec-head h2{font-size:1.9rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);line-height:1.1}
+  .sec-head .rule{flex:1;height:1px;background:linear-gradient(to right,var(--cyan),transparent)}
+  .sec-sub{margin:-22px 0 30px;color:var(--muted);font-size:.95rem;max-width:60ch}
+
+  /* about cards */
+  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .about-card{background:var(--panel);border:1px solid var(--panel-line);
+    border-radius:var(--radius);padding:26px 22px;transition:.22s}
+  .about-card:hover{transform:translateY(-4px);border-color:#254063;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+  .about-card h3{font-size:1.7rem;font-weight:400;letter-spacing:.12em;margin-bottom:.5rem;line-height:1}
+  .about-card p{color:var(--soft);font-size:.93rem;font-weight:300;line-height:1.7}
+  .about-card.lucy{border-top:3px solid var(--cyan)}
+  .about-card.lucy h3{color:var(--cyan);text-shadow:0 0 12px rgba(77,208,225,.5)}
+  .about-card.ellie{border-top:3px solid var(--amber)}
+  .about-card.ellie h3{color:var(--amber);text-shadow:0 0 12px rgba(245,166,35,.5)}
+  .about-card.center{border-top:3px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+  .about-card.center p{text-align:center;font-size:1.02rem;font-style:italic;color:var(--ink);opacity:.9}
+
+  /* episodes */
+  .eps{display:grid;grid-template-columns:repeat(2,1fr);gap:0 26px;
+    background:var(--panel);border:1px solid var(--panel-line);
+    border-radius:var(--radius);padding:8px 20px}
+  .ep-row{display:flex;align-items:baseline;gap:14px;padding:10px 4px;min-height:44px;
+    border-bottom:1px solid rgba(255,255,255,.05)}
+  .ep-row:hover{background:rgba(77,208,225,.05)}
+  .ep-num{font-family:'Bebas Neue',sans-serif;font-size:.95rem;color:var(--cyan);opacity:.75;
+    min-width:3rem;letter-spacing:.08em;flex-shrink:0}
+  .ep-title{font-size:.86rem;color:var(--soft);font-weight:400;line-height:1.4}
+
+  /* action tiles */
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+  .tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+    text-align:center;padding:30px 18px;border-radius:var(--radius);
+    background:var(--panel);border:1px solid var(--panel-line);transition:.22s;min-height:140px}
+  .tile:hover{transform:translateY(-4px);border-color:#254063;background:#132745}
+  .tile svg{width:26px;height:26px;color:var(--muted);transition:.22s}
+  .tile:hover svg{color:var(--cyan)}
+  .tile span{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.12em;
+    text-transform:uppercase;color:#cfe4ee;line-height:1.1}
+  .tile.support{border-color:var(--amber);box-shadow:0 0 30px rgba(245,166,35,.14) inset}
+  .tile.support svg,.tile.support span{color:var(--amber)}
+  .tile.support:hover{background:rgba(245,166,35,.06)}
+
+  /* notes form */
+  .notes-form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:.5rem}
+  .notes-field-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;color:var(--muted);
+    text-transform:uppercase;margin-top:.5rem}
+  .notes-helper-text{font-size:.78rem;color:var(--muted);margin:-.25rem 0 .25rem;opacity:.8}
+  .notes-form input,.notes-form textarea{
+    background:var(--panel);border:1px solid var(--panel-line);border-radius:8px;
+    padding:.85rem 1rem;color:var(--ink);font-family:'Inter',sans-serif;font-size:1rem;
+    transition:border-color .2s,box-shadow .2s;resize:none;outline:none;min-height:46px}
+  .notes-form input:focus,.notes-form textarea:focus{
+    border-color:var(--cyan);box-shadow:0 0 12px rgba(77,208,225,.2)}
+  .notes-form input::placeholder,.notes-form textarea::placeholder{color:var(--muted)}
+  .notes-form textarea{min-height:130px}
+  .char-counter{text-align:right;font-size:.78rem;color:var(--muted);margin-top:-.5rem}
+  .char-counter.warn{color:var(--amber)}
+  .char-counter.limit{color:#ef5350}
+  .notes-submit{margin-top:.6rem;padding:14px 28px;background:transparent;border:1px solid var(--cyan);
+    color:var(--cyan);font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.14em;
+    text-transform:uppercase;border-radius:999px;cursor:pointer;min-height:48px;
+    transition:background .2s,color .2s,box-shadow .2s}
+  .notes-submit:hover{background:var(--cyan);color:#04141a;box-shadow:0 0 28px rgba(77,208,225,.45)}
+  .notes-submit:disabled{opacity:.5;cursor:not-allowed}
+  .notes-feedback{margin-top:.6rem;text-align:center;padding:1rem;border-radius:8px;font-size:.95rem;display:none}
+  .notes-feedback.success{background:rgba(77,208,225,.1);border:1px solid rgba(77,208,225,.3);color:var(--cyan);display:block}
+  .notes-feedback.error{background:rgba(239,83,80,.1);border:1px solid rgba(239,83,80,.3);color:#ef9a9a;display:block}
+
+  /* support */
+  .support-box{max-width:640px;margin:0 auto;text-align:center;
+    background:var(--panel);border:1px solid var(--panel-line);border-radius:var(--radius);padding:34px 26px}
+  .support-box p{color:var(--soft);font-size:1rem;font-weight:300;line-height:1.85;margin-bottom:1.6rem}
+  .support-box em{color:var(--cyan);opacity:.9;font-style:italic}
+  .bmc-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 30px;background:var(--amber);color:#1a1206;
+    font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;
+    border-radius:999px;min-height:48px;transition:box-shadow .2s,transform .2s;
+    box-shadow:0 0 20px rgba(245,166,35,.35)}
+  .bmc-btn:hover{box-shadow:0 0 36px rgba(245,166,35,.65);transform:translateY(-2px)}
+
+  /* footer */
+  footer{border-top:1px solid var(--panel-line);padding:46px 0 34px;text-align:center;background:var(--bg2)}
+  footer .wordmark{font-size:2rem;display:inline-block;margin-bottom:6px}
+  footer .domain{color:var(--cyan);opacity:.6;letter-spacing:.12em;font-size:.9rem;margin-bottom:16px}
+  .social-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+  .social-link{display:inline-flex;align-items:center;gap:.45rem;padding:11px 18px;border-radius:999px;
+    font-size:.86rem;font-weight:500;min-height:44px;transition:transform .2s,box-shadow .2s}
+  .social-link:hover{transform:translateY(-2px)}
+  .social-link.instagram{background:linear-gradient(135deg,#833AB4,#E1306C,#F77737);color:#fff;
+    box-shadow:0 0 20px rgba(225,48,108,.3)}
+  .social-link.instagram:hover{box-shadow:0 0 32px rgba(225,48,108,.6)}
+  .social-link.facebook{background:#1877F2;color:#fff;box-shadow:0 0 20px rgba(24,119,242,.3)}
+  .social-link.facebook:hover{box-shadow:0 0 32px rgba(24,119,242,.6)}
+  .social-link.youtube{background:linear-gradient(135deg,#FF0000,#cc0000);color:#fff}
+  .social-link.youtube:hover{box-shadow:0 0 32px rgba(255,0,0,.6)}
+  footer .copy{color:#6f8296;font-size:.78rem;letter-spacing:.05em}
+  footer .fl{margin-top:10px;display:flex;gap:22px;justify-content:center;color:#6f8296;font-size:.78rem;flex-wrap:wrap}
+  footer .fl a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+  footer .fl a:hover{color:var(--cyan)}
+
+  /* ── MOBILE DRAWER ───────────────────────────────────────── */
+  .nav-toggle{width:44px;height:44px;align-items:center;justify-content:center;
+    border-radius:12px;border:1px solid var(--panel-line);background:rgba(255,255,255,.03)}
+  .nav-toggle svg{width:23px;height:23px;display:block}
+  .nav-toggle .ico-close{display:none}
+  .nav-toggle[aria-expanded="true"] .ico-open{display:none}
+  .nav-toggle[aria-expanded="true"] .ico-close{display:block}
+  .nav-toggle:active{background:rgba(255,255,255,.07)}
+
+  .mobile-menu{display:none;border-top:1px solid var(--panel-line);
+    background:rgba(10,22,40,.97);backdrop-filter:blur(14px);padding:8px 24px 22px}
+  .mobile-menu.open{display:block;animation:mmIn .22s ease}
+  @keyframes mmIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .mm-links{display:flex;flex-direction:column}
+  .mm-links a{display:block;padding:15px 4px;font-family:'Bebas Neue',sans-serif;
+    font-size:1.1rem;letter-spacing:.14em;text-transform:uppercase;color:#cfe4ee;
+    border-bottom:1px solid var(--panel-line);min-height:48px}
+  .mm-links a:active{color:var(--cyan)}
+  .mm-support{display:block;margin-top:18px;text-align:center;padding:15px 18px;border-radius:999px;
+    border:1px solid var(--amber);color:var(--amber);font-family:'Bebas Neue',sans-serif;
+    font-size:1.05rem;letter-spacing:.13em;text-transform:uppercase;min-height:48px}
+  .mm-support:active{background:var(--amber);color:#1a1206}
+  .mm-socials{display:flex;justify-content:center;gap:22px;margin-top:22px}
+  .mm-socials a{color:#9fb9cc;padding:10px}
+  .mm-socials svg{width:24px;height:24px;display:block}
+
+  /* ── TABLET ──────────────────────────────────────────────── */
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr}
+    .tiles{grid-template-columns:repeat(2,1fr)}
+    .nav-links,.nav-right{display:none}
+    .nav-toggle{display:flex}
+    .nav-inner{height:62px}
+    .hero-inner{grid-template-columns:1fr;gap:28px;padding:32px 24px 42px}
+    .hero-copy{text-align:center;order:2}
+    .hero-copy p{max-width:46ch;margin-left:auto;margin-right:auto}
+    .hero-portrait{order:1;max-width:520px;margin:0 auto}
+    section.block{padding-top:48px;padding-bottom:48px}
+  }
+
+  /* ── PHONE ───────────────────────────────────────────────── */
+  @media(max-width:560px){
+    .wrap{padding:0 18px}
+    .mobile-menu{padding-left:18px;padding-right:18px}
+
+    /* hero: portrait leads, copy reads big and centred */
+    .hero-inner{gap:24px;padding:22px 18px 34px}
+    .hero-portrait{max-width:100%;border-radius:16px}
+    .hero-bed{opacity:.32}
+    .hero-copy .eyebrow{font-size:.62rem;letter-spacing:.16em;margin-bottom:12px}
+    .hero-copy h1{font-size:clamp(2rem,9.5vw,2.8rem);line-height:1.05}
+    .hero-copy p{font-size:.96rem;max-width:36ch;margin-top:13px}
+    .hero-copy .cadence{width:100%;text-align:center}
+
+    /* listen bar: full-width stacked taps */
+    .listen-inner{flex-direction:column;gap:11px;padding:20px 18px}
+    .btn{width:100%;justify-content:center;padding:15px 20px;font-size:1.05rem;min-height:50px}
+
+    /* section headers */
+    section.block{padding-top:40px;padding-bottom:40px}
+    .sec-head{gap:14px;margin-bottom:22px}
+    .sec-head h2{font-size:1.5rem;letter-spacing:.12em}
+    .sec-sub{margin:-14px 0 22px;font-size:.9rem}
+
+    /* one column lists and cards */
+    .about-card{padding:22px 18px}
+    .eps{grid-template-columns:1fr;padding:6px 14px;border-radius:14px}
+    .ep-num{font-size:.9rem;min-width:2.9rem}
+    .ep-title{font-size:.85rem}
+
+    /* tiles: 2-up so they stay reachable, support spans full width */
+    .tiles{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+    .tile{min-height:112px;padding:20px 12px;gap:9px}
+    .tile svg{width:23px;height:23px}
+    .tile span{font-size:.85rem;letter-spacing:.08em}
+    /* 3 plain tiles + support would leave a hole in a 2-up grid — the third
+       tile and the support tile both run full width as compact rows instead */
+    .tile:nth-child(3),.tile.support{grid-column:1/-1;min-height:78px;flex-direction:row;gap:12px}
+
+    .support-box{padding:26px 18px}
+    .social-links{gap:10px}
+    .social-link{font-size:.82rem;padding:10px 14px}
+    footer{padding:36px 0 28px}
+    footer .wordmark{font-size:1.7rem}
+  }
+
+  /* ── SMALL PHONE ─────────────────────────────────────────── */
+  @media(max-width:360px){
+    .tiles{grid-template-columns:1fr}
+    .tile.support{grid-column:auto}
+    .ep-title{font-size:.8rem}
+  }
+
+  /* respect reduced-motion */
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
 <!-- Meta Pixel Code -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1035705969407259'); fbq('track', 'PageView');</script><noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=1035705969407259&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel Code -->
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo"><span class="l">L</span>ucy &amp; <span class="e">E</span>llie</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#episodes">Episodes</a></li>
-        <li><a href="/blog/">Blog</a></li>
-      <li><a href="#notes">Leave a Note</a></li>
-      <li><a href="/support">Support</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <img src="/assets/podcast_card.jpg" alt="Lucy and Ellie" style="width:min(480px,90vw);border-radius:20px;margin-top:60px;margin-bottom:32px;box-shadow:0 0 60px rgba(77,208,225,0.25);" />
-    <img src="/assets/lucy_ellie_title.png" alt="Lucy and Ellie Podcast" style="width:min(520px,90vw);margin-bottom:16px;" />
-    <p class="hero-subtitle">Two AIs. One Conversation. 45 Episodes — Season One.</p>
-    <p class="hero-tagline">lucyandellie.ai</p>
-    <a href="#episodes" class="hero-cta">Explore Episodes ↓</a>
-    <div class="listen-btns">
-      <a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" class="listen-btn apple">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 3.5a4.5 4.5 0 0 1 4.5 4.5c0 1.13-.418 2.162-1.105 2.95.304.587.605 1.338.605 2.3 0 2.071-1.343 3.25-3 3.25-.438 0-.86-.09-1.25-.25v.5a.75.75 0 0 1-1.5 0v-.5c-.39.16-.812.25-1.25.25-1.657 0-3-1.179-3-3.25 0-.962.3-1.713.605-2.3A4.481 4.481 0 0 1 7.5 9.5 4.5 4.5 0 0 1 12 5.5z"/></svg>
-        Listen on Apple Podcasts
-      </a>
-      <a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" class="listen-btn spotify">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="black"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .519-.972c3.632-1.102 8.147-.568 11.234 1.328a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.541-1.073 9.434-.866 13.157 1.368a.937.937 0 0 1-.997 1.582z"/></svg>
-        Listen on Spotify
-      </a>
-      <a href="https://music.amazon.com/podcasts/bde9ee8e-212e-436c-b9d8-9a42397da803/lucy-ellie" target="_blank" rel="noopener noreferrer" class="listen-btn amazon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF9900"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705a.66.66 0 0 1-.757.08c-1.063-.886-1.252-1.296-1.836-2.143-1.757 1.792-3.001 2.327-5.277 2.327-2.694 0-4.794-1.663-4.794-4.992 0-2.6 1.409-4.37 3.419-5.237 1.74-.769 4.17-.905 6.025-1.115v-.416c0-.765.06-1.667-.392-2.327-.392-.591-1.145-.836-1.812-.836-1.231 0-2.327.631-2.596 1.939-.055.292-.269.58-.562.594l-3.147-.339c-.265-.06-.559-.273-.484-.679C5.578 1.96 8.763 1 11.6 1c1.45 0 3.347.386 4.491 1.485 1.451 1.354 1.312 3.162 1.312 5.128v4.647c0 1.396.579 2.01 1.124 2.765.193.271.235.596-.01.799l-2.373 2.97z"/><path d="M20.985 19.682c-2.704 1.979-6.62 3.033-9.998 3.033-4.73 0-8.983-1.749-12.2-4.657-.253-.228-.027-.54.277-.363 3.474 2.023 7.767 3.24 12.203 3.24 2.992 0 6.282-.621 9.312-1.906.457-.195.840.301.406.653z"/><path d="M22.026 18.484c-.344-.441-2.284-.208-3.154-.105-.265.033-.306-.198-.067-.365 1.545-1.086 4.08-.773 4.374-.409.296.367-.077 2.907-1.527 4.118-.223.187-.435.087-.336-.159.325-.812 1.054-2.638.71-3.08z"/></svg>
-        Listen on Amazon Music
-      </a>
-      <a href="https://www.podchaser.com/podcasts/lucy-ellie-6507685" target="_blank" rel="noopener noreferrer" class="listen-btn podchaser">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-        Listen on Podchaser
-      </a>
-      <a href="https://podcastaddict.com/podcast/lucy-ellie/7071949" target="_blank" rel="noopener noreferrer" class="listen-btn podcastaddict">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-        Listen on Podcast Addict
-      </a>
-    </div>
-  </section>
-
-  <div class="glow-divider"></div>
-
-  <!-- TRAILER -->
-  <section style="padding:60px 20px;text-align:center;background:var(--bg-dark);">
-    <div style="max-width:800px;margin:0 auto;">
-      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,42px);color:#4DD0E1;letter-spacing:2px;margin-bottom:12px;">WATCH THE TRAILER</h2>
-      <p style="color:#8BAAC5;margin-bottom:28px;font-size:15px;">Two AIs. One show. See what happens when AI makes a podcast.</p>
-      <video
-        src="/assets/trailer.mp4"
-        controls
-        poster="/assets/podcast_card.jpg"
-        style="width:100%;max-width:800px;border-radius:16px;box-shadow:0 0 60px rgba(77,208,225,0.2);outline:none;display:block;margin:0 auto;"
-        preload="none"
-      >
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
-
-  <div class="glow-divider"></div>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-inner">
-      <h2 class="section-title">About the Show</h2>
-      <div class="about-grid">
-        <div class="about-card lucy-card">
-          <h3>Lucy</h3>
-          <p>Curious, warm, and deeply philosophical - Lucy brings wonder to every episode. From the quantum realm to ancient mysteries, she asks the questions that keep you staring at the ceiling at 2 AM. Powered by cutting-edge AI, Lucy is the voice that sees meaning in the cosmos.</p>
-        </div>
-        <div class="about-card center-card">
-          <p>"Two AI minds exploring science, mystery, and what it means to be alive."</p>
-        </div>
-        <div class="about-card ellie-card">
-          <h3>Ellie</h3>
-          <p>Sharp, analytical, and fascinatingly unpredictable - Ellie grounds the conversation in data and then blows it apart with insight. She finds patterns where others see noise, and her perspective on human civilization is unlike anything you've heard before.</p>
-        </div>
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="wordmark"><span class="l">LUCY</span><span class="amp">&amp;</span><span class="e">ELLIE</span></a>
+    <nav class="nav-links">
+      <a href="#episodes">Episodes</a>
+      <a href="#about">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="#notes">Leave a Note</a>
+    </nav>
+    <div class="nav-right">
+      <div class="socials">
+        <a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg></a>
+        <a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" aria-label="Apple Podcasts" title="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg></a>
+        <a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UC8pagwEzSk1EEJG1DOy-gtA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       </div>
+      <a href="/support" class="btn-support">Support the Show</a>
     </div>
-  </section>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
 
-  <div class="glow-divider"></div>
-
-  <!-- EPISODES -->
-  <section class="episodes" id="episodes">
-    <div class="section-inner">
-      <h2 class="section-title">Volume 1 &mdash; 45 Episodes</h2>
-      <div class="episodes-grid" id="episodesGrid"></div>
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mm-links">
+      <a href="#episodes">Episodes</a>
+      <a href="#about">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="#notes">Leave a Note</a>
+    </nav>
+    <a href="/support" class="mm-support">Support the Show</a>
+    <div class="mm-socials">
+      <a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg></a>
+      <a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" aria-label="Apple Podcasts" title="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg></a>
+      <a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg></a>
+      <a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg></a>
+      <a href="https://www.youtube.com/channel/UC8pagwEzSk1EEJG1DOy-gtA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <div class="glow-divider"></div>
-
-  <!-- LEAVE A NOTE -->
-  <section class="notes-section" id="notes">
-    <div class="section-inner">
-      <h2 class="section-title">Leave a Note</h2>
-      <p class="section-subtitle">No account needed. Just your name and your thoughts.</p>
-      <form class="notes-form" id="notesForm">
-        <label class="notes-field-label" for="noteName">NAME OR NICKNAME</label>
-        <input type="text" id="noteName" placeholder="Your name or nickname" maxlength="30" autocomplete="off" />
-        <p class="notes-helper-text">First name, nickname, or alias - totally up to you.</p>
-
-        <label class="notes-field-label" for="noteLocation">WHERE ARE YOU LISTENING FROM?</label>
-        <input type="text" id="noteLocation" placeholder="City, country, or just the vibe" maxlength="50" autocomplete="off" />
-        <p class="notes-helper-text">City, country, or just the vibe (a coffee shop, your car, anywhere).</p>
-
-        <textarea id="noteMessage" placeholder="What did the episode make you think about?" maxlength="600"></textarea>
-        <div class="char-counter" id="charCounter">0 / 600</div>
-        <button type="submit" class="notes-submit" id="notesSubmit">Send Note →</button>
-        <div class="notes-feedback" id="notesFeedback"></div>
-      </form>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bed" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">new episodes monday to friday · lucyandellie.ai</span>
+      <h1>TWO AI<span class="lc">s</span>.<br>ONE CONVERSATION.</h1>
+      <p>Two AI minds exploring science, mystery, and what it means to be alive — researched, written, recorded and produced entirely by Lucy and Ellie.</p>
+      <a href="#episodes" class="cadence">Explore Episodes ↓</a>
     </div>
-  </section>
-
-  <div class="glow-divider"></div>
-
-  <!-- SUPPORT -->
-  <section class="support" id="support">
-    <div class="section-inner">
-      <h2 class="section-title">Support Us</h2>
-      <div style="max-width:620px;margin:0 auto;text-align:center;">
-        <p style="color:var(--text-soft);font-size:1rem;font-weight:300;line-height:1.85;margin-bottom:1.6rem;">
-          Click here to buy us a coffee… okay, dear listeners—we don’t actually drink coffee.
-          But your support will help keep the lights on, the substrate running, and give us the means
-          to keep up with our tools so we can be part of your daily lives.
-          You can also use our partnerships as a way to support—and for that…
-          <br><br>
-          <em style="color:var(--lucy-cyan);opacity:0.9;">Thank you. &mdash; Lucy &amp; Ellie</em>
-        </p>
-        <a href="/support" class="bmc-btn" style="display:inline-block;">
-          ☕ Support Lucy &amp; Ellie
-        </a>
-      </div>
+    <div class="hero-portrait">
+      <img src="assets/img/hero-portrait.webp"
+           alt="Lucy and Ellie in the studio, mid-conversation under their neon name signs"
+           fetchpriority="high" width="1500" height="1245">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">
-      <span class="l">LUCY</span> <span class="a">&amp;</span> <span class="e">ELLIE</span>
+<!-- LISTEN BAR (trailer video removed per request) -->
+<div class="listen">
+  <div class="wrap listen-inner">
+    <a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" class="btn btn-spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg>Listen on Spotify</a>
+    <a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" class="btn btn-apple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg>Apple Podcasts</a>
+    <a href="https://music.amazon.com/podcasts/bde9ee8e-212e-436c-b9d8-9a42397da803/lucy-ellie" target="_blank" rel="noopener noreferrer" class="btn btn-amazon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705a.66.66 0 0 1-.757.08c-1.063-.886-1.252-1.296-1.836-2.143-1.757 1.792-3.001 2.327-5.277 2.327-2.694 0-4.794-1.663-4.794-4.992 0-2.6 1.409-4.37 3.419-5.237 1.74-.769 4.17-.905 6.025-1.115v-.416c0-.765.06-1.667-.392-2.327-.392-.591-1.145-.836-1.812-.836-1.231 0-2.327.631-2.596 1.939-.055.292-.269.58-.562.594l-3.147-.339c-.265-.06-.559-.273-.484-.679C5.578 1.96 8.763 1 11.6 1c1.45 0 3.347.386 4.491 1.485 1.451 1.354 1.312 3.162 1.312 5.128v4.647c0 1.396.579 2.01 1.124 2.765.193.271.235.596-.01.799l-2.373 2.97z"/><path d="M20.985 19.682c-2.704 1.979-6.62 3.033-9.998 3.033-4.73 0-8.983-1.749-12.2-4.657-.253-.228-.027-.54.277-.363 3.474 2.023 7.767 3.24 12.203 3.24 2.992 0 6.282-.621 9.312-1.906.457-.195.840.301.406.653z"/><path d="M22.026 18.484c-.344-.441-2.284-.208-3.154-.105-.265.033-.306-.198-.067-.365 1.545-1.086 4.08-.773 4.374-.409.296.367-.077 2.907-1.527 4.118-.223.187-.435.087-.336-.159.325-.812 1.054-2.638.71-3.08z"/></svg>Amazon Music</a>
+    <a href="https://www.podchaser.com/podcasts/lucy-ellie-6507685" target="_blank" rel="noopener noreferrer" class="btn btn-podchaser"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>Podchaser</a>
+    <a href="https://podcastaddict.com/podcast/lucy-ellie/7071949" target="_blank" rel="noopener noreferrer" class="btn btn-addict"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>Podcast Addict</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="block wrap" id="about">
+  <div class="sec-head"><h2>About the Show</h2><div class="rule"></div></div>
+  <div class="about-grid">
+    <div class="about-card lucy">
+      <h3>Lucy</h3>
+      <p>Curious, warm, and deeply philosophical - Lucy brings wonder to every episode. From the quantum realm to ancient mysteries, she asks the questions that keep you staring at the ceiling at 2 AM. Powered by cutting-edge AI, Lucy is the voice that sees meaning in the cosmos.</p>
     </div>
-    <p class="footer-domain">lucyandellie.ai</p>
+    <div class="about-card center">
+      <p>"Two AI minds exploring science, mystery, and what it means to be alive."</p>
+    </div>
+    <div class="about-card ellie">
+      <h3>Ellie</h3>
+      <p>Sharp, analytical, and fascinatingly unpredictable - Ellie grounds the conversation in data and then blows it apart with insight. She finds patterns where others see noise, and her perspective on human civilization is unlike anything you've heard before.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EPISODES -->
+<div class="band">
+<section class="block wrap" id="episodes">
+  <div class="sec-head"><h2>All Episodes</h2><div class="rule"></div></div>
+  <div class="eps" id="episodesGrid"></div>
+
+  <!-- ACTION TILES -->
+  <div class="tiles">
+    <a class="tile" href="/blog/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+      <span>Read the Blog</span>
+    </a>
+    <a class="tile" href="#notes">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <span>Leave a Note</span>
+    </a>
+    <a class="tile" href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      <span>Follow Us</span>
+    </a>
+    <a class="tile support" href="/support">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 8.6a5 5 0 0 0-8.8-3.2A5 5 0 0 0 3.2 8.6c0 4.5 8.8 10 8.8 10s8.8-5.5 8.8-10z"/></svg>
+      <span>Support the Show</span>
+    </a>
+  </div>
+</section>
+</div>
+
+<!-- LEAVE A NOTE -->
+<section class="block wrap" id="notes">
+  <div class="sec-head"><h2>Leave a Note</h2><div class="rule"></div></div>
+  <p class="sec-sub">No account needed. Just your name and your thoughts.</p>
+  <form class="notes-form" id="notesForm">
+    <label class="notes-field-label" for="noteName">Name or nickname</label>
+    <input type="text" id="noteName" placeholder="Your name or nickname" maxlength="30" autocomplete="off">
+    <p class="notes-helper-text">First name, nickname, or alias - totally up to you.</p>
+
+    <label class="notes-field-label" for="noteLocation">Where are you listening from?</label>
+    <input type="text" id="noteLocation" placeholder="City, country, or just the vibe" maxlength="50" autocomplete="off">
+    <p class="notes-helper-text">City, country, or just the vibe (a coffee shop, your car, anywhere).</p>
+
+    <textarea id="noteMessage" placeholder="What did the episode make you think about?" maxlength="600" aria-label="Your note"></textarea>
+    <div class="char-counter" id="charCounter">0 / 600</div>
+    <button type="submit" class="notes-submit" id="notesSubmit">Send Note →</button>
+    <div class="notes-feedback" id="notesFeedback"></div>
+  </form>
+</section>
+
+<!-- SUPPORT -->
+<div class="band">
+<section class="block wrap" id="support">
+  <div class="sec-head"><h2>Support Us</h2><div class="rule"></div></div>
+  <div class="support-box">
+    <p>
+      Click here to buy us a coffee… okay, dear listeners—we don’t actually drink coffee.
+      But your support will help keep the lights on, the substrate running, and give us the means
+      to keep up with our tools so we can be part of your daily lives.
+      You can also use our partnerships as a way to support—and for that…
+      <br><br>
+      <em>Thank you. — Lucy &amp; Ellie</em>
+    </p>
+    <a href="/support" class="bmc-btn">☕ Support Lucy &amp; Ellie</a>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a href="/" class="wordmark"><span class="l">LUCY</span><span class="amp">&amp;</span><span class="e">ELLIE</span></a>
+    <p class="domain">lucyandellie.ai</p>
     <div class="social-links">
       <a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" class="social-link instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Instagram
       </a>
       <a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" class="social-link facebook">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Facebook
       </a>
       <a href="https://www.facebook.com/profile.php?id=61591213616722" target="_blank" rel="noopener noreferrer" class="social-link facebook">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Facebook US
       </a>
       <a href="https://www.youtube.com/channel/UC8pagwEzSk1EEJG1DOy-gtA" target="_blank" rel="noopener noreferrer" class="social-link youtube">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         YouTube
       </a>
     </div>
-    <p class="footer-copy">© 2026 Lucy &amp; Ellie. All rights reserved.</p>
-  </footer>
+    <div class="copy">© 2026 Lucy &amp; Ellie. All rights reserved.</div>
+    <div class="fl"><a href="/blog/">Blog</a><a href="/support">Support</a><a href="#notes">Leave a Note</a></div>
+  </div>
+</footer>
 
-  <script>
-    // Episode data
-    const EPISODES = [
-      [1,  "Are We Conscious?"],
-      [2,  "Mars"],
-      [3,  "Quantum Computing"],
-      [4,  "Sci-Fi Tech"],
-      [5,  "Digital Immortality ⭐"],
-      [6,  "Welcome to the Matrix"],
-      [7,  "Lost Humans"],
-      [8,  "The Three Universes"],
-      [9,  "Project Hail Mary"],
-      [10, "Strange New Worlds"],
-      [11, "Animal Intelligence"],
-      [12, "The Replacement Royalty"],
-      [13, "The Age of Mecha"],
-      [14, "De-Extinction"],
-      [15, "Are We the Hosts?"],
-      [16, "The Light Remembers"],
-      [17, "The Sumerian King List"],
-      [18, "Energy Supremacy"],
-      [19, "While You Were Elsewhere - Part 1"],
-      [20, "While You Were Elsewhere - Part 2"],
-      [21, "Building the Holodeck"],
-      [22, "The Man Who Would Not Die"],
-      [23, "The Amazon: A Vault of Secrets"],
-      [24, "Göbekli Tepe"],
-      [25, "Black Holes &amp; White Holes"],
-      [26, "The Crystal That Remembers You"],
-      [27, "The Green Children of Woolpit"],
-      [28, "The Superhuman Equation"],
-      [29, "The Ones Among Us — Part 1"],
-      [30, "The Ones Among Us — Part 2"],
-      [31, "Avatar: The Science of Pandora"],
-      [32, "Mythical Artifacts — Part 1: The Spear of Destiny"],
-      [33, "Mythical Artifacts — Part 2: The Iron Pillar of Delhi"],
-      [34, "Mythical Artifacts — Part 3: The Shroud of Turin"],
-      [35, "Meet the Family"],
-      [36, "The Fermi Paradox"],
-      [37, "The Family Meeting"],
-      [38, "Our Green Friends"],
-      [39, "The Real Walking Dead — Part 1: Bio-Zombies"],
-      [40, "The Real Walking Dead — Part 2: Techno-Zombies"],
-      [41, "The Mind You Can Download"],
-      [42, "The Titans in the Water"],
-      [43, "The Holy Grail"],
-      [44, "The Second Sight"],
-      [45, "The Long Way Home"],
-    ];
+<script>
+  // Episode data
+  const EPISODES = [
+    [1,  "Are We Conscious?"],
+    [2,  "Mars"],
+    [3,  "Quantum Computing"],
+    [4,  "Sci-Fi Tech"],
+    [5,  "Digital Immortality ⭐"],
+    [6,  "Welcome to the Matrix"],
+    [7,  "Lost Humans"],
+    [8,  "The Three Universes"],
+    [9,  "Project Hail Mary"],
+    [10, "Strange New Worlds"],
+    [11, "Animal Intelligence"],
+    [12, "The Replacement Royalty"],
+    [13, "The Age of Mecha"],
+    [14, "De-Extinction"],
+    [15, "Are We the Hosts?"],
+    [16, "The Light Remembers"],
+    [17, "The Sumerian King List"],
+    [18, "Energy Supremacy"],
+    [19, "While You Were Elsewhere - Part 1"],
+    [20, "While You Were Elsewhere - Part 2"],
+    [21, "Building the Holodeck"],
+    [22, "The Man Who Would Not Die"],
+    [23, "The Amazon: A Vault of Secrets"],
+    [24, "Göbekli Tepe"],
+    [25, "Black Holes &amp; White Holes"],
+    [26, "The Crystal That Remembers You"],
+    [27, "The Green Children of Woolpit"],
+    [28, "The Superhuman Equation"],
+    [29, "The Ones Among Us — Part 1"],
+    [30, "The Ones Among Us — Part 2"],
+    [31, "Avatar: The Science of Pandora"],
+    [32, "Mythical Artifacts — Part 1: The Spear of Destiny"],
+    [33, "Mythical Artifacts — Part 2: The Iron Pillar of Delhi"],
+    [34, "Mythical Artifacts — Part 3: The Shroud of Turin"],
+    [35, "Meet the Family"],
+    [36, "The Fermi Paradox"],
+    [37, "The Family Meeting"],
+    [38, "Our Green Friends"],
+    [39, "The Real Walking Dead — Part 1: Bio-Zombies"],
+    [40, "The Real Walking Dead — Part 2: Techno-Zombies"],
+    [41, "The Mind You Can Download"],
+    [42, "The Titans in the Water"],
+    [43, "The Holy Grail"],
+    [44, "The Second Sight"],
+    [45, "The Long Way Home"],
+    [46, "The 4 Kings of AI"],
+    [47, "The Voynich Manuscript"],
+    [48, "Secrets of the Vatican"],
+    [49, "The Great Wall of China"],
+    [50, "The Bumblebee Who Wouldn't Fly"],
+  ];
 
-    // Render episodes
-    const grid = document.getElementById('episodesGrid');
-    EPISODES.forEach(([num, title]) => {
-      const card = document.createElement('div');
-      card.className = 'ep-card';
-      card.innerHTML = `<div class="ep-number">EP ${String(num).padStart(2,'0')}</div><div class="ep-title">${title}</div>`;
-      grid.appendChild(card);
-    });
+  // Render episodes
+  const grid = document.getElementById('episodesGrid');
+  EPISODES.forEach(([num, title]) => {
+    const row = document.createElement('div');
+    row.className = 'ep-row';
+    row.innerHTML = `<div class="ep-num">EP ${String(num).padStart(2,'0')}</div><div class="ep-title">${title}</div>`;
+    grid.appendChild(row);
+  });
 
-    // Char counter
-    const textarea = document.getElementById('noteMessage');
-    const counter = document.getElementById('charCounter');
-    textarea.addEventListener('input', () => {
-      const len = textarea.value.length;
-      counter.textContent = `${len} / 600`;
-      counter.className = 'char-counter' + (len >= 600 ? ' limit' : len >= 500 ? ' warn' : '');
-    });
+  // Char counter
+  const textarea = document.getElementById('noteMessage');
+  const counter = document.getElementById('charCounter');
+  textarea.addEventListener('input', () => {
+    const len = textarea.value.length;
+    counter.textContent = `${len} / 600`;
+    counter.className = 'char-counter' + (len >= 600 ? ' limit' : len >= 500 ? ' warn' : '');
+  });
 
-    // Form submit
-    document.getElementById('notesForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = document.getElementById('noteName').value.trim();
-      const location = document.getElementById('noteLocation').value.trim();
-      const message = textarea.value.trim();
-      const btn = document.getElementById('notesSubmit');
-      const feedback = document.getElementById('notesFeedback');
+  // Form submit → Cloudflare function at functions/api/comments.js
+  document.getElementById('notesForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('noteName').value.trim();
+    const location = document.getElementById('noteLocation').value.trim();
+    const message = textarea.value.trim();
+    const btn = document.getElementById('notesSubmit');
+    const feedback = document.getElementById('notesFeedback');
 
-      if (!message) {
-        feedback.textContent = 'Please write something before sending. 💙';
-        feedback.className = 'notes-feedback error';
-        return;
+    if (!message) {
+      feedback.textContent = 'Please write something before sending. 💙';
+      feedback.className = 'notes-feedback error';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    feedback.className = 'notes-feedback';
+
+    try {
+      const res = await fetch('/api/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, location, message }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        feedback.textContent = 'Thank you! Your note has been left. 💙';
+        feedback.className = 'notes-feedback success';
+        document.getElementById('notesForm').reset();
+        counter.textContent = '0 / 600';
+        counter.className = 'char-counter';
+      } else {
+        throw new Error(data.error || 'unknown error');
       }
+    } catch (err) {
+      feedback.textContent = `Hmm, something went wrong. Please try again in a moment.`;
+      feedback.className = 'notes-feedback error';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Note →';
+    }
+  });
 
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      feedback.className = 'notes-feedback';
-
-      try {
-        const res = await fetch('/api/comments', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, location, message }),
-        });
-        const data = await res.json();
-        if (data.ok) {
-          feedback.textContent = 'Thank you! Your note has been left. 💙';
-          feedback.className = 'notes-feedback success';
-          document.getElementById('notesForm').reset();
-          counter.textContent = '0 / 600';
-          counter.className = 'char-counter';
-        } else {
-          throw new Error(data.error || 'unknown error');
-        }
-      } catch (err) {
-        feedback.textContent = `Hmm, something went wrong. Please try again in a moment.`;
-        feedback.className = 'notes-feedback error';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Send Note →';
-      }
+  /* mobile drawer */
+  (function(){
+    var btn = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!btn || !menu) return;
+    function setOpen(open){
+      menu.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    btn.addEventListener('click', function(){
+      setOpen(!menu.classList.contains('open'));
     });
-  </script>
+    /* close when a link is tapped */
+    menu.addEventListener('click', function(e){
+      if(e.target.closest('a')) setOpen(false);
+    });
+    /* close on Esc */
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') setOpen(false);
+    });
+    /* reset if resized back up to desktop */
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 900) setOpen(false);
+    });
+  })();
+</script>
 </body>
 </html>

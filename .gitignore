@@ -2,3 +2,9 @@
 .wrangler/
 .DS_Store
 node_modules/
+# never deploy working artifacts to the live site
+*.bak_*
+*.bak-*
+_preview_*.png
+index_v2_NEWDESIGN.html
+assets/img/.bak_*
