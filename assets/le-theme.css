@@ -1,0 +1,145 @@
+/* ============================================================
+   Lucy & Ellie — shared site theme
+   Extracted from the locked homepage design (2026-08-08/09) so that
+   /start, /support, /blog and every SEO episode page render as ONE site.
+   Tokens, nav, mobile drawer, footer and the 900/560/360 responsive
+   system all live here. Page-specific rules go in the page.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#0a1628;
+  --bg2:#060e1a;
+  --panel:#0f1f38;
+  --panel-line:#1a2e4a;
+  --ink:#ffffff;
+  --soft:#e0f7fa;
+  --muted:#8baac5;
+  --cyan:#4dd0e1;          /* Lucy */
+  --cyan-soft:#8ce7f2;
+  --amber:#f5a623;         /* Ellie */
+  --amber-soft:#f8c46a;
+  --radius:16px;
+  --maxw:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;max-width:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.wordmark,.btn,.tag{font-family:'Bebas Neue',sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ── wordmark ───────────────────────────────────────────── */
+.wordmark{display:inline-flex;align-items:center;min-height:44px;
+  font-family:'Bebas Neue',sans-serif;
+  font-weight:400;font-size:1.6rem;letter-spacing:.1em;line-height:1}
+.wordmark .l{color:var(--cyan)}
+.wordmark .amp{color:#cfe4ee;margin:0 .12em}
+.wordmark .e{color:var(--amber)}
+
+/* ── nav ────────────────────────────────────────────────── */
+header.nav{position:sticky;top:0;z-index:50;
+  background:rgba(10,22,40,.85);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--panel-line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-links{display:flex;gap:28px;font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.nav-links a{color:#c8dae7;transition:color .18s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.socials{display:flex;gap:14px;align-items:center}
+.socials a{color:#9fb9cc;transition:color .18s,transform .18s}
+.socials a:hover{color:var(--cyan);transform:translateY(-1px)}
+.socials svg{width:19px;height:19px;display:block}
+.btn-support{border:1px solid var(--amber);color:var(--amber);
+  padding:9px 18px;border-radius:999px;font-size:.72rem;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;transition:.2s;white-space:nowrap}
+.btn-support:hover{background:var(--amber);color:#1a1206;box-shadow:0 0 24px rgba(245,166,35,.35)}
+.nav-toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer;
+  padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.nav-toggle svg{width:26px;height:26px;display:block}
+.nav-toggle .ico-close{display:none}
+.nav-toggle[aria-expanded="true"] .ico-open{display:none}
+.nav-toggle[aria-expanded="true"] .ico-close{display:block}
+
+/* ── mobile drawer ──────────────────────────────────────── */
+.mobile-menu{display:none;border-top:1px solid var(--panel-line);
+  background:rgba(6,14,26,.98);padding:14px 24px 26px}
+.mobile-menu.open{display:block}
+.mm-links{display:flex;flex-direction:column}
+.mm-links a{display:flex;align-items:center;padding:15px 2px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.1rem;letter-spacing:.14em;text-transform:uppercase;color:#cfe4ee;
+  border-bottom:1px solid var(--panel-line);min-height:48px}
+.mm-links a:active{color:var(--cyan)}
+.mm-support{display:block;margin-top:18px;text-align:center;padding:15px 18px;border-radius:999px;
+  border:1px solid var(--amber);color:var(--amber);font-family:'Bebas Neue',sans-serif;
+  font-size:1.05rem;letter-spacing:.13em;text-transform:uppercase;min-height:48px}
+.mm-support:active{background:var(--amber);color:#1a1206}
+.mm-socials{display:flex;justify-content:center;gap:22px;margin-top:22px}
+.mm-socials a{color:#9fb9cc;padding:10px}
+.mm-socials svg{width:24px;height:24px;display:block}
+
+/* ── footer ─────────────────────────────────────────────── */
+footer.site{background:var(--bg2);border-top:1px solid var(--panel-line);
+  padding:52px 0 36px;text-align:center;margin-top:64px}
+footer.site .wordmark{font-size:2rem}
+footer.site .domain{margin-top:6px;color:var(--muted);font-size:.85rem;letter-spacing:.16em;text-transform:uppercase}
+footer.site .social-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+footer.site .social-link{display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:999px;border:1px solid var(--panel-line);
+  color:var(--muted);font-size:.85rem;transition:.2s;min-height:44px}
+footer.site .social-link:hover{color:var(--cyan);border-color:rgba(77,208,225,.45);background:rgba(77,208,225,.06)}
+footer.site .copy{margin-top:26px;color:#5f7d99;font-size:.8rem}
+footer.site .fl{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-top:14px}
+footer.site .fl a{color:var(--muted);font-size:.82rem;transition:.2s}
+footer.site .fl a:hover{color:var(--cyan)}
+
+/* ── shared bits ────────────────────────────────────────── */
+.eyebrow{display:inline-block;color:var(--amber-soft);
+  font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:999px;
+  font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.12em;
+  text-transform:uppercase;transition:.2s;border:1px solid transparent;min-height:46px}
+.pill-cyan{border-color:rgba(77,208,225,.45);background:rgba(77,208,225,.08);color:var(--cyan)}
+.pill-cyan:hover{background:var(--cyan);color:#04141a;box-shadow:0 0 26px rgba(77,208,225,.4)}
+.pill-amber{border-color:var(--amber);color:var(--amber)}
+.pill-amber:hover{background:var(--amber);color:#1a1206;box-shadow:0 0 26px rgba(245,166,35,.35)}
+
+/* ── TABLET ─────────────────────────────────────────────── */
+@media(max-width:900px){
+  .nav-links,.nav-right{display:none}
+  .nav-toggle{display:flex}
+  .nav-inner{height:62px}
+}
+
+/* ── PHONE ──────────────────────────────────────────────── */
+@media(max-width:560px){
+  /* section padding must never out-specify the wrap gutters — this is the
+     bug that jammed headings against the screen edge before 2026-08-08 */
+  .wrap{padding:0 18px}
+  .mobile-menu{padding-left:18px;padding-right:18px}
+  footer.site{padding:40px 0 30px;margin-top:44px}
+  footer.site .wordmark{font-size:1.7rem}
+  footer.site .social-links{gap:10px}
+  footer.site .social-link{font-size:.82rem;padding:10px 14px}
+  .pill{width:100%;justify-content:center}
+}
+
+/* ── SMALL PHONE ────────────────────────────────────────── */
+@media(max-width:360px){
+  .wrap{padding:0 14px}
+  .mobile-menu{padding-left:14px;padding-right:14px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}

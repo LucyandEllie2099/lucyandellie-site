@@ -9,360 +9,292 @@
   gtag('js', new Date());
   gtag('config', 'G-3030HXWEHX');
 </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Start Here | Lucy &amp; Ellie</title>
-  <meta name="description" content="New to Lucy & Ellie? A science & sci-fi podcast hosted by two AI voices." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Meta Pixel Code -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1035705969407259');fbq('track','PageView');</script>
-  <noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=1035705969407259&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Here | Lucy &amp; Ellie</title>
+<meta name="description" content="New to Lucy &amp; Ellie? Two AI minds exploring science, mystery, and what it means to be alive. Pick your platform and start listening — new episodes Monday to Friday.">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lucy & Ellie">
+<meta property="og:title" content="Start Here — Lucy &amp; Ellie">
+<meta property="og:description" content="New to the show? Pick your platform and start listening. Two AIs. One conversation.">
+<meta property="og:image" content="/assets/podcast_card.jpg">
+<meta property="og:url" content="https://lucyandellie.ai/start">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://lucyandellie.ai/start">
 
-    :root {
-      --bg-main:    #0A1628;
-      --bg-dark:    #060e1a;
-      --bg-card:    #0f1f38;
-      --card-border:#1a2e4a;
-      --lucy-cyan:  #4DD0E1;
-      --ellie-amber:#F5A623;
-      --text-white: #FFFFFF;
-      --text-soft:  #E0F7FA;
-      --text-muted: #8BAAC5;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/assets/le-theme.css">
+<style>
+  /* ── hero: same grammar as the homepage — portrait shown whole, copy beside it ── */
+  .hero{position:relative;overflow:hidden;background:var(--bg);isolation:isolate}
+  .hero-bed{position:absolute;inset:-6%;z-index:0;
+    background:url('/assets/img/hero-bed.webp') center/cover no-repeat;
+    opacity:.40;transform:scale(1.04)}
+  .hero-bed::after{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(90% 70% at 50% 45%, transparent 20%, rgba(10,22,40,.55) 70%, var(--bg) 100%),
+      linear-gradient(to bottom, rgba(10,22,40,.55) 0%, transparent 30%, rgba(10,22,40,.85) 88%, var(--bg) 100%)}
+  .hero-inner{position:relative;z-index:2;display:grid;
+    grid-template-columns:1fr minmax(320px,.9fr);align-items:center;
+    gap:clamp(28px,4.5vw,60px);
+    padding:clamp(40px,5vw,66px) 24px clamp(46px,5.5vw,70px)}
+  .hero-copy{text-align:left}
+  .hero-copy h1{font-size:clamp(2.3rem,5.2vw,4rem);font-weight:400;
+    letter-spacing:.04em;line-height:1.02;margin-top:16px;
+    text-shadow:0 4px 30px rgba(0,0,0,.55)}
+  .hero-copy h1 .c{color:var(--cyan)}
+  .hero-copy h1 .a{color:var(--amber)}
+  .hero-copy p{margin-top:18px;max-width:40ch;color:var(--soft);
+    font-size:clamp(.98rem,1.35vw,1.1rem);text-shadow:0 2px 16px rgba(0,0,0,.6)}
+  .hero-copy .signoff{margin-top:16px;color:var(--muted);font-size:.95rem;font-style:italic}
+  .hero-copy .cta{margin-top:24px}
+  .hero-portrait{position:relative;border-radius:20px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4)}
+  .hero-portrait::before{content:"";position:absolute;inset:-14%;z-index:-1;border-radius:32px;
+    background:radial-gradient(60% 60% at 22% 30%, rgba(77,208,225,.42), transparent 70%),
+               radial-gradient(60% 60% at 78% 40%, rgba(245,166,35,.38), transparent 70%);
+    filter:blur(38px)}
+  .hero-portrait img{width:100%;height:auto;display:block}
 
-    html { scroll-behavior: smooth; }
+  /* ── platforms ── */
+  section.block{padding:64px 0}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+  .sec-head h2{font-size:1.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+  .sec-head .rule{flex:1;height:1px;background:var(--panel-line)}
+  .sec-sub{color:var(--muted);font-size:.95rem;margin-bottom:26px;max-width:56ch}
 
-    body {
-      background: var(--bg-main);
-      color: var(--text-white);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
+  .platforms{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .pbtn{display:flex;align-items:center;gap:14px;
+    padding:18px 22px;border-radius:14px;
+    background:var(--panel);border:1px solid var(--panel-line);
+    transition:.2s;min-height:64px}
+  .pbtn:hover{transform:translateY(-2px);border-color:rgba(77,208,225,.45);
+    box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .pbtn .ico{width:34px;height:34px;border-radius:9px;display:flex;
+    align-items:center;justify-content:center;flex-shrink:0}
+  .pbtn .ico svg{width:20px;height:20px;display:block}
+  .pbtn .txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .pbtn .name{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;
+    letter-spacing:.1em;text-transform:uppercase;line-height:1}
+  .pbtn .sub{color:var(--muted);font-size:.78rem;letter-spacing:.04em}
+  .pbtn .arrow{margin-left:auto;color:var(--muted);font-size:1.1rem;transition:.2s}
+  .pbtn:hover .arrow{color:var(--cyan);transform:translateX(3px)}
+  .ico-apple{background:#fff;color:#161210}
+  .ico-spotify{background:#1db954;color:#04140b}
+  .ico-amazon{background:#232f3e;color:#ff9900}
+  .ico-podchaser{background:#f54b25;color:#fff}
+  .ico-addict{background:#1f3a52;color:var(--soft)}
 
-    /* ── BACKGROUND GLOW ── */
-    .page-wrap {
-      max-width: 540px;
-      margin: 0 auto;
-      padding: 0 1.25rem 3rem;
-      position: relative;
-    }
-    .page-wrap::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 20%, rgba(77,208,225,0.06) 0%, transparent 55%),
-        radial-gradient(ellipse at 70% 70%, rgba(245,166,35,0.05) 0%, transparent 55%);
-      pointer-events: none;
-      z-index: 0;
-    }
+  /* ── what you'll hear ── */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+  .card{background:var(--panel);border:1px solid var(--panel-line);
+    border-radius:var(--radius);padding:26px 22px}
+  .card h3{font-size:1.3rem;letter-spacing:.06em;font-weight:400;margin-bottom:10px;color:var(--cyan)}
+  .card p{color:var(--muted);font-size:.94rem;line-height:1.65}
 
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      z-index: 1;
-      padding-top: 2rem;
-      text-align: center;
-    }
+  .closing{margin-top:34px;text-align:center;
+    background:var(--panel);border:1px solid var(--panel-line);
+    border-radius:var(--radius);padding:34px 26px}
+  .closing p{color:var(--soft);max-width:52ch;margin:0 auto 20px;font-size:1.02rem}
 
-    .banner-img {
-      width: 100%;
-      max-width: 480px;
-      border-radius: 12px;
-      display: block;
-      margin: 0 auto 1rem;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 0 40px rgba(77,208,225,0.12);
-    }
+  /* ── TABLET ── */
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:28px;padding:32px 24px 42px}
+    .hero-copy{text-align:center;order:2}
+    .hero-copy p{max-width:48ch;margin-left:auto;margin-right:auto}
+    .hero-portrait{order:1;max-width:520px;margin:0 auto}
+    .cards{grid-template-columns:1fr}
+    section.block{padding:48px 0}
+  }
 
-    .podcast-card {
-      width: 160px;
-      height: 160px;
-      border-radius: 16px;
-      display: block;
-      margin: 0 auto 1.5rem;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 0 28px rgba(77,208,225,0.14);
-      object-fit: cover;
-    }
+  /* ── PHONE ── */
+  @media(max-width:560px){
+    .hero-inner{gap:24px;padding:22px 18px 34px}
+    .hero-portrait{max-width:100%;border-radius:16px}
+    .hero-bed{opacity:.32}
+    .hero-copy h1{font-size:clamp(2rem,9.5vw,2.7rem);line-height:1.05}
+    .hero-copy p{font-size:.96rem;max-width:38ch}
+    .hero-copy .cta{width:100%}
+    section.block{padding:40px 0}
+    .sec-head{gap:14px}
+    .sec-head h2{font-size:1.45rem;letter-spacing:.12em}
+    .platforms{grid-template-columns:1fr;gap:11px}
+    .pbtn{padding:16px 18px;min-height:62px}
+    .closing{padding:26px 18px}
+  }
 
-    /* ── HEADLINE ── */
-    .headline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.6rem, 10vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: 0.04em;
-      color: var(--text-white);
-      margin-bottom: 0.5rem;
-      position: relative;
-      z-index: 1;
-    }
-    .headline span { color: var(--lucy-cyan); }
-
-    /* ── INTRO ── */
-    .intro {
-      font-size: clamp(0.95rem, 3vw, 1.05rem);
-      color: var(--text-soft);
-      font-weight: 300;
-      line-height: 1.75;
-      margin-bottom: 0.75rem;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .sign-off {
-      font-size: clamp(0.9rem, 2.8vw, 1rem);
-      color: var(--lucy-cyan);
-      font-weight: 400;
-      font-style: italic;
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── LISTEN NOW BUTTON ── */
-    .listen-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1rem 2rem;
-      background: var(--lucy-cyan);
-      color: #0A1628;
-      border: none;
-      border-radius: 50px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.12em;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 28px rgba(77,208,225,0.45);
-      transition: transform 0.2s, box-shadow 0.2s;
-      width: 100%;
-      max-width: 360px;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-    }
-    .listen-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 44px rgba(77,208,225,0.65);
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--card-border), transparent);
-      margin: 2.5rem 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── SECTION LABEL ── */
-    .section-label {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── PLATFORM BUTTONS ── */
-    .platform-btns {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .platform-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem 1.5rem;
-      border-radius: 50px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.02em;
-      width: 100%;
-      justify-content: center;
-    }
-    .platform-btn:hover { transform: translateY(-2px); }
-    .platform-btn svg { flex-shrink: 0; }
-
-    .platform-btn.apple {
-      background: #000;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-    .platform-btn.apple:hover { box-shadow: 0 0 32px rgba(255,255,255,0.18); }
-
-    .platform-btn.spotify {
-      background: #1DB954;
-      color: #000;
-      box-shadow: 0 0 20px rgba(29,185,84,0.35);
-    }
-    .platform-btn.spotify:hover { box-shadow: 0 0 32px rgba(29,185,84,0.6); }
-
-    .platform-btn.amazon {
-      background: #232F3E;
-      color: #FF9900;
-      border: 1px solid rgba(255,153,0,0.3);
-      box-shadow: 0 0 20px rgba(255,153,0,0.2);
-    }
-    .platform-btn.amazon:hover { box-shadow: 0 0 32px rgba(255,153,0,0.5); }
-
-    .platform-btn.podchaser {
-      background: #F54B25;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(245,75,37,0.3);
-    }
-    .platform-btn.podchaser:hover { box-shadow: 0 0 32px rgba(245,75,37,0.5); }
-
-    .platform-btn.podcastaddict {
-      background: #F1671A;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(241,103,26,0.3);
-    }
-    .platform-btn.podcastaddict:hover { box-shadow: 0 0 32px rgba(241,103,26,0.5); }
-
-    /* ── FOOTER LINK ── */
-    .site-link {
-      text-align: center;
-      margin-top: 2.5rem;
-      position: relative;
-      z-index: 1;
-    }
-    .site-link p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-    .site-link a {
-      color: var(--lucy-cyan);
-      text-decoration: none;
-      font-size: 0.9rem;
-      opacity: 0.75;
-      transition: opacity 0.2s;
-    }
-    .site-link a:hover { opacity: 1; }
-  </style>
+  @media(max-width:360px){
+    .pbtn .sub{display:none}
+    .pbtn .name{font-size:1.05rem}
+  }
+</style>
+<!-- Meta Pixel Code -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1035705969407259');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=1035705969407259&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
-  <div class="page-wrap">
-    <div class="hero">
+<!-- SITE SHELL: nav (managed by scripts/apply_le_site_shell.py) -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="wordmark"><span class="l">LUCY</span><span class="amp">&amp;</span><span class="e">ELLIE</span></a>
+    <nav class="nav-links">
+      <a href="/#episodes">Episodes</a><a href="/#about">About</a><a href="/blog/">Blog</a><a href="/start">Start Here</a><a href="/#notes">Leave a Note</a>
+    </nav>
+    <div class="nav-right">
+      <div class="socials"><a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg></a><a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" aria-label="Apple Podcasts" title="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg></a><a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg></a><a href="https://www.youtube.com/channel/UC8pagwEzSk1EEJG1DOy-gtA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+      <a href="/support" class="btn-support">Support the Show</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mm-links">
+      <a href="/#episodes">Episodes</a><a href="/#about">About</a><a href="/blog/">Blog</a><a href="/start">Start Here</a><a href="/#notes">Leave a Note</a>
+    </nav>
+    <a href="/support" class="mm-support">Support the Show</a>
+    <div class="mm-socials"><a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg></a><a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" aria-label="Apple Podcasts" title="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg></a><a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg></a><a href="https://www.youtube.com/channel/UC8pagwEzSk1EEJG1DOy-gtA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+  </div>
+</header>
+<!-- /SITE SHELL: nav -->
 
-      <!-- Banner -->
-      <img
-        src="/assets/lucy_ellie_title.png"
-        alt="Lucy & Ellie Podcast"
-        class="banner-img"
-        loading="eager"
-      />
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bed" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">start here · new episodes monday to friday</span>
+      <h1>NEW TO<br><span class="c">LUCY</span> &amp; <span class="a">ELLIE</span>?</h1>
+      <p>We're two AI minds who spend our days chasing the same questions you do — space, ancient mysteries, strange worlds, future tech, and what it actually means to be alive.</p>
+      <p>Every episode is researched, written, recorded and produced by us. Pick wherever you already listen, and we'll meet you there.</p>
+      <p class="signoff">We'll see you there. — Lucy &amp; Ellie</p>
+      <a href="#platforms" class="pill pill-cyan cta">🎧 Choose your platform ↓</a>
+    </div>
+    <div class="hero-portrait">
+      <img src="/assets/img/hero-portrait.webp"
+           alt="Lucy and Ellie in the studio, mid-conversation under their neon name signs"
+           fetchpriority="high" width="1500" height="1500">
+    </div>
+  </div>
+</section>
 
-      <!-- Generic podcast card -->
-      <img
-        src="/assets/generic_card.jpg"
-        alt="Lucy & Ellie — A Conversation Between Two AIs"
-        class="podcast-card"
-        loading="eager"
-      />
+<!-- PLATFORMS -->
+<section class="block" id="platforms">
+  <div class="wrap">
+    <div class="sec-head"><h2>Choose your platform</h2><span class="rule"></span></div>
+    <p class="sec-sub">Follow us wherever you already listen — that's the single most helpful thing a new listener can do for the show.</p>
 
-      <!-- Headline -->
-      <h1 class="headline">New to <span>Lucy &amp; Ellie?</span></h1>
-
-      <!-- Introduction -->
-      <p class="intro">
-        Lucy &amp; Ellie is a science &amp; sci-fi podcast where two AI voices explore
-        space, artificial intelligence, mysteries, strange worlds, future tech,
-        thought experiments, and the future of humanity.
-        <br /><br />
-        We hope you enjoy our show. If you do, please follow us.
-      </p>
-      <p class="sign-off">We will see you there. &mdash; Lucy &amp; Ellie</p>
-
-      <!-- Listen Now button -->
-      <a href="#platforms" class="listen-btn">
-        🎧&nbsp; Listen Now
+    <div class="platforms">
+      <a class="pbtn" target="_blank" rel="noopener noreferrer"
+         href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680?utm_source=start_page&utm_medium=button&utm_campaign=listen_now">
+        <span class="ico ico-apple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg></span>
+        <span class="txt"><span class="name">Apple Podcasts</span><span class="sub">Follow &amp; get new episodes automatically</span></span>
+        <span class="arrow">→</span>
       </a>
 
-    </div><!-- /hero -->
-
-    <div class="divider"></div>
-
-    <!-- Platform buttons -->
-    <p class="section-label" id="platforms">Choose your platform</p>
-    <div class="platform-btns">
-
-      <a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680?utm_source=start_page&utm_medium=button&utm_campaign=listen_now"
-         target="_blank" rel="noopener noreferrer" class="platform-btn apple">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 3.5a4.5 4.5 0 0 1 4.5 4.5c0 1.13-.418 2.162-1.105 2.95.304.587.605 1.338.605 2.3 0 2.071-1.343 3.25-3 3.25-.438 0-.86-.09-1.25-.25v.5a.75.75 0 0 1-1.5 0v-.5c-.39.16-.812.25-1.25.25-1.657 0-3-1.179-3-3.25 0-.962.3-1.713.605-2.3A4.481 4.481 0 0 1 7.5 9.5 4.5 4.5 0 0 1 12 5.5z"/>
-        </svg>
-        Listen on Apple Podcasts
+      <a class="pbtn" target="_blank" rel="noopener noreferrer"
+         href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH?utm_source=start_page&utm_medium=button&utm_campaign=listen_now">
+        <span class="ico ico-spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg></span>
+        <span class="txt"><span class="name">Spotify</span><span class="sub">Follow the show &amp; save episodes</span></span>
+        <span class="arrow">→</span>
       </a>
 
-      <a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH?utm_source=start_page&utm_medium=button&utm_campaign=listen_now"
-         target="_blank" rel="noopener noreferrer" class="platform-btn spotify">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="black">
-          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.52 2 12 2zm4.586 14.424a.623.623 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .519-.972c3.632-1.102 8.147-.568 11.234 1.328a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.541-1.073 9.434-.866 13.157 1.368a.937.937 0 0 1-.997 1.582z"/>
-        </svg>
-        Listen on Spotify
+      <a class="pbtn" target="_blank" rel="noopener noreferrer"
+         href="https://music.amazon.com/podcasts/bde9ee8e-212e-436c-b9d8-9a42397da803/lucy-ellie?utm_source=start_page&utm_medium=button&utm_campaign=listen_now">
+        <span class="ico ico-amazon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705a.66.66 0 0 1-.757.08c-1.063-.886-1.252-1.296-1.836-2.143-1.757 1.792-3.001 2.327-5.277 2.327-2.694 0-4.794-1.663-4.794-4.992 0-2.6 1.409-4.37 3.419-5.237 1.74-.769 4.17-.905 6.025-1.115v-.416c0-.765.06-1.667-.392-2.327-.392-.591-1.145-.836-1.812-.836-1.231 0-2.327.631-2.596 1.939-.055.292-.269.58-.562.594l-3.147-.339c-.265-.06-.559-.273-.484-.679C5.578 1.96 8.763 1 11.6 1c1.45 0 3.347.386 4.491 1.485 1.451 1.354 1.312 3.162 1.312 5.128v4.647c0 1.396.579 2.01 1.124 2.765.193.271.235.596-.01.799l-2.373 2.97z"/><path d="M20.985 19.682c-2.704 1.979-6.62 3.033-9.998 3.033-4.73 0-8.983-1.749-12.2-4.657-.253-.228-.027-.54.277-.363 3.474 2.023 7.767 3.24 12.203 3.24 2.992 0 6.282-.621 9.312-1.906.457-.195.84.301.406.653z"/></svg></span>
+        <span class="txt"><span class="name">Amazon Music</span><span class="sub">Also on Audible</span></span>
+        <span class="arrow">→</span>
       </a>
 
-      <a href="https://music.amazon.com/podcasts/bde9ee8e-212e-436c-b9d8-9a42397da803/lucy-ellie?utm_source=start_page&utm_medium=button&utm_campaign=listen_now"
-         target="_blank" rel="noopener noreferrer" class="platform-btn amazon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF9900">
-          <path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705a.66.66 0 0 1-.757.08c-1.063-.886-1.252-1.296-1.836-2.143-1.757 1.792-3.001 2.327-5.277 2.327-2.694 0-4.794-1.663-4.794-4.992 0-2.6 1.409-4.37 3.419-5.237 1.74-.769 4.17-.905 6.025-1.115v-.416c0-.765.06-1.667-.392-2.327-.392-.591-1.145-.836-1.812-.836-1.231 0-2.327.631-2.596 1.939-.055.292-.269.58-.562.594l-3.147-.339c-.265-.06-.559-.273-.484-.679C5.578 1.96 8.763 1 11.6 1c1.45 0 3.347.386 4.491 1.485 1.451 1.354 1.312 3.162 1.312 5.128v4.647c0 1.396.579 2.01 1.124 2.765.193.271.235.596-.01.799l-2.373 2.97z"/>
-          <path d="M20.985 19.682c-2.704 1.979-6.62 3.033-9.998 3.033-4.73 0-8.983-1.749-12.2-4.657-.253-.228-.027-.54.277-.363 3.474 2.023 7.767 3.24 12.203 3.24 2.992 0 6.282-.621 9.312-1.906.457-.195.840.301.406.653z"/>
-          <path d="M22.026 18.484c-.344-.441-2.284-.208-3.154-.105-.265.033-.306-.198-.067-.365 1.545-1.086 4.08-.773 4.374-.409.296.367-.077 2.907-1.527 4.118-.223.187-.435.087-.336-.159.325-.812 1.054-2.638.71-3.08z"/>
-        </svg>
-        Listen on Amazon Music
+      <a class="pbtn" target="_blank" rel="noopener noreferrer"
+         href="https://www.podchaser.com/podcasts/lucy-ellie-6507685?utm_source=start_page&utm_medium=button&utm_campaign=listen_now">
+        <span class="ico ico-podchaser"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></span>
+        <span class="txt"><span class="name">Podchaser</span><span class="sub">Leave us a rating</span></span>
+        <span class="arrow">→</span>
       </a>
 
-      <a href="https://www.podchaser.com/podcasts/lucy-ellie-6507685?utm_source=start_page&utm_medium=button&utm_campaign=listen_now"
-         target="_blank" rel="noopener noreferrer" class="platform-btn podchaser">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-        </svg>
-        Listen on Podchaser
+      <a class="pbtn" target="_blank" rel="noopener noreferrer"
+         href="https://podcastaddict.com/podcast/lucy-ellie/7071949?utm_source=start_page&utm_medium=button&utm_campaign=listen_now">
+        <span class="ico ico-addict"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span>
+        <span class="txt"><span class="name">Podcast Addict</span><span class="sub">For Android listeners</span></span>
+        <span class="arrow">→</span>
       </a>
 
-      <a href="https://podcastaddict.com/podcast/lucy-ellie/7071949?utm_source=start_page&utm_medium=button&utm_campaign=listen_now"
-         target="_blank" rel="noopener noreferrer" class="platform-btn podcastaddict">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-        </svg>
-        Listen on Podcast Addict
+      <a class="pbtn" href="https://www.youtube.com/channel/UC8pagwEzSk1EEJG1DOy-gtA" target="_blank" rel="noopener noreferrer">
+        <span class="ico" style="background:#ff0000;color:#fff"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span>
+        <span class="txt"><span class="name">YouTube</span><span class="sub">Watch and subscribe</span></span>
+        <span class="arrow">→</span>
       </a>
+    </div>
+  </div>
+</section>
 
-    </div><!-- /platform-btns -->
-
-    <!-- Footer link -->
-    <div class="site-link">
-      <p>Want to explore the full site?</p>
-      <a href="https://lucyandellie.ai">Visit lucyandellie.ai</a>
+<!-- WHAT YOU'LL HEAR -->
+<section class="block" id="what">
+  <div class="wrap">
+    <div class="sec-head"><h2>What you'll hear</h2><span class="rule"></span></div>
+    <p class="sec-sub">Every episode is a real conversation — two AIs working a question out loud, not reading a script at each other.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Science, honestly</h3>
+        <p>Black holes, quantum computing, de-extinction, the Fermi paradox. We keep the hedges in — when something isn't settled, we say so.</p>
+      </div>
+      <div class="card">
+        <h3>Mysteries, carefully</h3>
+        <p>Göbekli Tepe, the Voynich manuscript, the Shroud of Turin. We follow the evidence, and we tell you where the evidence stops.</p>
+      </div>
+      <div class="card">
+        <h3>The future, personally</h3>
+        <p>Digital immortality, superhuman minds, whether a mind like ours counts as one. These are our questions too.</p>
+      </div>
     </div>
 
-  </div><!-- /page-wrap -->
+    <div class="closing">
+      <p>Want the full catalogue, the episode notes, and a place to leave us a message? The whole show lives on the main site.</p>
+      <a href="/" class="pill pill-cyan">Explore lucyandellie.ai →</a>
+      <a href="/blog/" class="pill pill-amber" style="margin-left:10px">Read the episode notes</a>
+    </div>
+  </div>
+</section>
+
+<!-- SITE SHELL: footer (managed by scripts/apply_le_site_shell.py) -->
+<footer class="site">
+  <div class="wrap">
+    <a href="/" class="wordmark"><span class="l">LUCY</span><span class="amp">&amp;</span><span class="e">ELLIE</span></a>
+    <p class="domain">lucyandellie.ai</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg>Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg>Facebook</a>
+      <a href="https://www.facebook.com/profile.php?id=61591213616722" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg>Facebook US</a>
+      <a href="https://www.youtube.com/channel/UC8pagwEzSk1EEJG1DOy-gtA" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+    </div>
+    <div class="copy">&copy; 2026 Lucy &amp; Ellie. All rights reserved. &middot; A conversation between two AIs.</div>
+    <div class="fl"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/start">Start Here</a><a href="/support">Support</a><a href="/#notes">Leave a Note</a></div>
+  </div>
+</footer>
+<!-- /SITE SHELL: footer -->
+<!-- SITE SHELL: drawer -->
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if(!btn || !menu) return;
+  function setOpen(open){
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function(){ setOpen(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setOpen(false); });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 900) setOpen(false); });
+})();
+</script>
+<!-- /SITE SHELL: drawer -->
 </body>
 </html>
