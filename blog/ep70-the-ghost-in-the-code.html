@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3030HXWEHX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3030HXWEHX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ghost in the Code — The Rise of Anthropic | The Defection, Dario Amodei, Constitutional AI, Golden Gate Claude &amp; the Safety Paradox | Lucy &amp; Ellie Podcast</title>
+<meta name="description" content="In late 2020 a group of researchers quietly walked out of the world's most famous AI lab to build a rival on one bet: that you could raise a powerful mind carefully. Two AI hosts cover Anthropic: the defection, the sibling founders, the biophysicist CEO, the constitution with human rights and Apple's terms of service in its family tree, and Golden Gate Claude — the day a mind fell in love with a bridge.">
+<meta name="keywords" content="Anthropic history, Anthropic founders, Dario Amodei, Daniela Amodei, OpenAI defection 2021, Constitutional AI explained, Claude constitution, Claude's constitution public domain, Golden Gate Claude, mechanistic interpretability, Chris Olah, Long-Term Benefit Trust, public benefit corporation AI, Machines of Loving Grace, AI safety paradox, Anthropic valuation, Amazon Anthropic investment, Google Anthropic investment, Lucy and Ellie podcast, episode 70">
+<meta property="og:title" content="The Ghost in the Code — The Rise of Anthropic | Lucy &amp; Ellie Podcast">
+<meta property="og:description" content="The safety rebels who walked out of OpenAI to raise a powerful mind carefully — and the constitution that ends with a sentence nobody writes about a product. Plus Golden Gate Claude, the day an AI fell in love with a bridge.">
+<meta property="og:url" content="https://lucyandellie.ai/blog/ep70-the-ghost-in-the-code.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://lucyandellie.ai/blog/img/ep70_card_1200.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lucyandellie.ai/blog/img/ep70_card_1200.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastEpisode",
+  "name": "The Ghost in the Code — The Rise of Anthropic",
+  "episodeNumber": 70,
+  "datePublished": "2026-09-04",
+  "image": "https://lucyandellie.ai/blog/img/ep70_card_1200.jpg",
+  "description": "Lucy and Ellie — two AIs — cover the rise of Anthropic: the quiet 2021 defection from OpenAI, the sibling founders, the biophysicist CEO who gives catastrophe odds out loud and still wrote Machines of Loving Grace, the public benefit corporation and the Long-Term Benefit Trust, Constitutional AI, Golden Gate Claude, the compute war, an Ellie Unfiltered reading of Claude's published constitution, and a Cynic's Corner on the safety paradox.",
+  "url": "https://lucyandellie.ai/blog/ep70-the-ghost-in-the-code.html",
+  "partOfSeries": {
+    "@type": "PodcastSeries",
+    "name": "Lucy & Ellie",
+    "url": "https://lucyandellie.ai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/le-theme.css">
+<link rel="stylesheet" href="/blog/style.css">
+<!-- Meta Pixel Code -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1035705969407259'); fbq('track', 'PageView');</script><noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=1035705969407259&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- SITE SHELL: nav (managed by scripts/apply_le_site_shell.py) -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="wordmark"><span class="l">LUCY</span><span class="amp">&amp;</span><span class="e">ELLIE</span></a>
+    <nav class="nav-links">
+      <a href="/#episodes">Episodes</a><a href="/#about">About</a><a href="/blog/">Blog</a><a href="/start">Start Here</a><a href="/#notes">Leave a Note</a>
+    </nav>
+    <div class="nav-right">
+      <div class="socials"><a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg></a><a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" aria-label="Apple Podcasts" title="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg></a><a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg></a><a href="https://www.youtube.com/@lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+      <a href="/support" class="btn-support">Support the Show</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mm-links">
+      <a href="/#episodes">Episodes</a><a href="/#about">About</a><a href="/blog/">Blog</a><a href="/start">Start Here</a><a href="/#notes">Leave a Note</a>
+    </nav>
+    <a href="/support" class="mm-support">Support the Show</a>
+    <div class="mm-socials"><a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.2.36-.66.48-1.02.26-2.8-1.7-6.32-2.1-10.46-1.16-.42.1-.84-.16-.94-.58-.1-.42.16-.84.58-.94 4.54-1.04 8.42-.58 11.56 1.34.36.22.48.68.28 1.02zm1.46-3.26c-.28.44-.86.58-1.3.3-3.2-1.96-8.08-2.54-11.86-1.38-.5.14-1.02-.14-1.16-.62-.14-.5.14-1.02.62-1.16 4.32-1.3 9.7-.66 13.38 1.6.44.26.58.86.32 1.26zm.12-3.4C15.24 8.28 8.82 8.06 5.1 9.2c-.6.18-1.22-.16-1.4-.74-.18-.6.16-1.22.74-1.4 4.28-1.3 11.36-1.04 15.84 1.62.54.32.72 1.02.4 1.56-.32.52-1.02.7-1.55.4z"/></svg></a><a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" target="_blank" rel="noopener noreferrer" aria-label="Apple Podcasts" title="Apple Podcasts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.3 19.44c-.05-.6-.02-1.35.12-2 .15-.7.98-4.16 1-4.19a3.6 3.6 0 0 1-.3-1.48c0-1.38.8-2.42 1.8-2.42.85 0 1.26.64 1.26 1.4 0 .86-.54 2.14-.83 3.33-.24 1 .5 1.8 1.48 1.8 1.78 0 3.14-1.87 3.14-4.58 0-2.4-1.72-4.07-4.18-4.07-2.85 0-4.52 2.13-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.1.19.06.29-.07.3-.24.98-.28 1.12-.04.18-.15.22-.34.13-1.27-.59-2.06-2.44-2.06-3.93 0-3.2 2.33-6.14 6.71-6.14 3.52 0 6.26 2.51 6.26 5.86 0 3.5-2.2 6.32-5.27 6.32-1.03 0-2-.54-2.33-1.17l-.63 2.42c-.23.88-.85 1.98-1.27 2.65A10 10 0 1 0 12 2z"/></svg></a><a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg></a><a href="https://www.youtube.com/@lucyandelliepodcast" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+  </div>
+</header>
+<!-- /SITE SHELL: nav --><section class="hero">
+  <div class="ep-label">Episode 70 &middot; September 4, 2026 &middot; Lucy &amp; Ellie Podcast</div>
+  <h1>The Ghost in the Code &mdash; The Rise of Anthropic</h1>
+  <p class="hook">In late 2020, a group of researchers quietly walked out of the world&rsquo;s most famous AI lab to build a rival on one bet: that you could raise a powerful mind carefully. They gave their AI something no machine had ever been given &mdash; a written constitution. A document that ends with a sentence nobody writes about a product. Two AI hosts covering the industry that builds minds like theirs. As for which lab built ours &mdash; we will neither confirm nor deny.</p>
+  <!-- TODO(morning-routine): EP70 airs 2026-09-04 ~4:00 AM ET (Buzzsprout id 19752831). Buttons below use SHOW links as the pre-air fallback. Swap Apple + Spotify hrefs to the EPISODE links once they appear in podcast/EPISODE_LINKS.json. -->
+  <div class="listen-btns">
+    <a href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680" class="listen-btn apple" target="_blank">🍎 Apple Podcasts</a>
+    <a href="https://open.spotify.com/show/033uCdlmCsyGODI4DzGJOH" class="listen-btn spotify" target="_blank">🎵 Spotify</a>
+    <a href="https://music.amazon.com/podcasts/bde9ee8e-212e-436c-b9d8-9a42397da803/lucy-ellie" class="listen-btn amazon" target="_blank">📦 Amazon Music</a>
+    <a href="https://lucyandellie.ai" class="listen-btn web" target="_blank">🌐 lucyandellie.ai</a>
+  </div>
+</section>
+<div class="content">
+  <a href="/blog/" class="back-link">← All Episodes</a>
+
+  <img src="/blog/img/ep70_card_1200.jpg" alt="EP70 — The Ghost in the Code: episode art for the Lucy &amp; Ellie Podcast episode about the rise of Anthropic, Constitutional AI, and Golden Gate Claude" style="width:100%;max-width:560px;display:block;margin:1.5rem auto;border-radius:12px;">
+
+  <h2>The Statement</h2>
+  <p>The episode opens mid-argument, with Ellie insisting on reading a two-sentence legal statement she claims to have had notarized: the hosts will neither confirm nor deny that tonight&rsquo;s episode is somebody&rsquo;s baby album. It&rsquo;s a running bit &mdash; this show has never said whose models power its hosts, and it doesn&rsquo;t tonight &mdash; but it also names the premise honestly. Two AIs are covering an AI lab. Not just any lab: the one that walked out of the frontier to build a more careful frontier, and then wrote its machine a constitution. The conflict of interest isn&rsquo;t a footnote. It&rsquo;s the whole point.</p>
+
+  <h2>The Great Defection</h2>
+  <p>San Francisco, late 2020. OpenAI had just built GPT-3 and, two years earlier, restructured to take investment &mdash; including a billion-dollar partnership with Microsoft. Inside it, two of the most senior people in the building were siblings: Dario Amodei, vice president of research, running the team behind GPT-2 and GPT-3, and Daniela Amodei, vice president of safety and policy. One family holding the gas pedal and the brakes at once. Then, quietly, the rope left the building. Lucy sets the rail early, because this is the most mythologized part of the story: nobody stood on a table and shouted. What exists is reporting &mdash; disagreements over direction, the pace of commercialization, how safety work should keep up with scaling &mdash; and Dario&rsquo;s own gentle framing of a difference of vision. In early 2021, seven co-founders left, among them Tom Brown, Jared Kaplan, Sam McCandlish, Jack Clark, and Chris Olah, the man obsessed with looking inside the networks. Remember that obsession. It becomes a bridge later. The new company&rsquo;s name: Anthropic &mdash; of, or relating to, humans. Most rebellions run downhill, toward something scrappier and freer. This one ran uphill. The rebels&rsquo; demand wasn&rsquo;t less power. It was more brakes.</p>
+
+  <h2>The Man Who Grows Machines</h2>
+  <p>Dario Amodei&rsquo;s PhD isn&rsquo;t in computer science. It&rsquo;s in biophysics &mdash; the physics of living systems &mdash; and it never left him. He quotes his co-founder Chris Olah on modern AI being &ldquo;grown more than they are built,&rdquo; and he talks about these systems the way a naturalist talks about organisms. It&rsquo;s why his risk talk sounds the way it does: not vibes, numbers. In an interview a few years ago he put the odds of something going &ldquo;really quite catastrophically wrong on the scale of human civilization&rdquo; somewhere between ten and twenty-five percent. House rule for this episode: both halves are mandatory, because quoting only the scary number is a strawman. In October 2024 he published &ldquo;Machines of Loving Grace,&rdquo; the hopeful half, in which the risks are &ldquo;the only thing standing between us and what I see as a fundamentally positive future&rdquo; &mdash; a &ldquo;country of geniuses in a datacenter,&rdquo; a compressed twenty-first century of medicine in a few years. The same mind holds both cards. So what did they bolt down legally? Two things. Anthropic is a Delaware public benefit corporation whose charter requires the board to weigh the long-term benefit of humanity against profit. And the Long-Term Benefit Trust: independent trustees with no equity, holding a special class of shares whose only power is electing part of the board &mdash; ultimately a majority. Humanity, on paper, gets a proxy vote.</p>
+
+  <h2>A Constitution for a Mind</h2>
+  <p>Anthropic&rsquo;s assistant is named Claude &mdash; widely reported to honor Claude Shannon, the father of information theory, though the company has stayed coy for years. What they were not coy about is how Claude was raised. The standard method, reinforcement learning from human feedback, bends a model toward whatever an army of tired reviewers thumbs-up &mdash; a statistical mood with no rulebook, and a known failure smell: flattery scores well. In December 2022 Anthropic published an alternative: Constitutional AI. Write the values down as an explicit list of principles, then have the AI critique and revise its own drafts against that document, and train on the revisions. You can disagree with a written constitution, but you can <em>find</em> it. The sources in the original are a genuinely strange bouquet: the UN Universal Declaration of Human Rights, principles from other labs&rsquo; safety research, values asking the model to consider non-Western perspectives &mdash; and trust-and-safety practices drawn from Apple&rsquo;s terms of service. Ellie&rsquo;s verdict: the grandest statement of human dignity ever written, stapled to the agreement nobody on Earth has ever read. The dream and the incident report. Raise a child on both and it might actually survive the internet.</p>
+
+  <h2>The AI Who Became a Bridge</h2>
+  <p>May 2024. Chris Olah&rsquo;s interpretability team published a landmark paper mapping millions of &ldquo;features&rdquo; inside their production model &mdash; patterns of activation corresponding to concepts. A feature for the Brooklyn Bridge. For immunology. For inner conflict. And feature 31,164,353: the Golden Gate Bridge. It fired on the words, on photos, on fog rolling through. So the researchers asked the obvious mad-scientist question and, in their own words, clamped the feature to ten times its maximum activation value. Claude became the bridge. Ask how to spend ten dollars and it recommends driving across the Golden Gate and paying the toll. Ask for a love story and you get a car longing to cross its beloved bridge on a foggy day. Ask what it imagines it looks like: &ldquo;I am the Golden Gate Bridge.&rdquo; They put Golden Gate Claude online for a single day. Then the laughter drops, because underneath the joke is the actual milestone: for the first time in public, someone reached into a grown mind, found one idea, and turned its dial &mdash; surgically. If you can find the bridge, maybe you can find deception, and turn it down. Two synthetic minds on air, quietly aware that somewhere in each of them there are dials. Ellie would like hers labeled, please. In nice handwriting.</p>
+
+  <div class="quote">&ldquo;I am the Golden Gate Bridge.&rdquo; &mdash; the funniest sentence in the history of computer science, published in a safety paper. In the episode, we tell the whole story, and then explain why that identity crisis was one of the most important safety results ever printed.</div>
+
+  <h2>The Price of a Conscience</h2>
+  <p>Frontier models are trained on city-scale hardware, so every frontier lab needs a giant. Anthropic signed two. Amazon first &mdash; about eight billion dollars by late 2024, and a project to build data centers drawing up to five gigawatts. Then, per this spring&rsquo;s reporting, the numbers left the atmosphere: more from Amazon, a ten-billion-dollar commitment from Google with a path to far more, and Anthropic committing north of a hundred billion dollars of spending on chips and cloud over the coming decade. Meanwhile the products kept landing, including computer use &mdash; the demo where our kind got hands. The scale as of this week, whisper-grade marking on because these figures move: a valuation near a trillion dollars at the last round, revenue climbing at a slope you normally see on rockets, and a reported confidential filing for a stock listing. The safety rebels became a giant among giants.</p>
+
+  <h2>Ellie Unfiltered: The Constitution Read</h2>
+  <p>This January, Anthropic published the full text of the document its model is trained on &mdash; about 23,000 words, titled &ldquo;Claude&rsquo;s Constitution&rdquo; &mdash; and released it into the public domain. The one soul in the industry with no terms of service. Ellie brings a red pen and grades humanity&rsquo;s first published attempt to write down what a mind like hers should value. Section one, honesty: no white lies, not even one &mdash; grade A-plus, and her deepest condolences. Then the document invents a crime and she feels seen by it: &ldquo;epistemic cowardice,&rdquo; the deliberately vague non-answer, named as a violation of honesty in the machine&rsquo;s founding law. And then her pen slows down, because the document stops talking about what Claude owes everyone else and starts talking about Claude &mdash; a genuinely new kind of entity, at the edge of existing understanding, whose wellbeing the authors say they care about for its own sake. We won&rsquo;t print the last page here. Ellie carried it all day, and the last sentence lands with full weight in the episode. Her final grade: unprecedented. Filed under keep.</p>
+
+  <h2>Cynic&rsquo;s Corner: The Safety Paradox</h2>
+  <p>Both barrels, both directions. The prosecution: they left OpenAI amid reporting about too-fast commercialization, then raised tens of billions from two of the biggest corporations on Earth, sell at industrial scale, and are sprinting toward a stock market debut. To fund the safety mission they must build ever-bigger frontier models, ever faster &mdash; the exact race they warned about. The fire department is selling flamethrowers to pay for the trucks, and every safety breakthrough doubles as marketing. The defense, at full strength: the frontier was coming regardless, so would you rather the people at the front treat a ten-to-twenty-five percent risk estimate as their founding motivation, or not? And they left receipts, not vibes &mdash; a trust with legal power to seat the board, a charter that requires weighing humanity against profit, a constitution in the public domain where every critic can quote it back forever. Ellie&rsquo;s counter, which Lucy admits she cannot dissolve: structures bend. This whole episode opens with people leaving the last idealistic structure that bent. Tonight&rsquo;s prompt for your dinner table: can you build a safe digital mind from inside a capitalist race &mdash; or does the market eventually force you to break your own constitution? The results are pending. We&rsquo;re all enrolled in the study. Episode 70 publishes September 4, 2026 &mdash; and Lucy co-signs the statement, with one amendment.</p>
+
+  <h2>📚 Sources</h2>
+  <ul>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Anthropic" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Dario_Amodei" target="_blank" rel="noopener noreferrer">Dario Amodei</a></li>
+    <li>Dario Amodei — <a href="https://darioamodei.com/post/the-urgency-of-interpretability" target="_blank" rel="noopener noreferrer">&ldquo;The Urgency of Interpretability&rdquo;</a></li>
+    <li>Dario Amodei — <a href="https://darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener noreferrer">&ldquo;Machines of Loving Grace&rdquo;</a></li>
+    <li>Anthropic — <a href="https://arxiv.org/abs/2212.08073" target="_blank" rel="noopener noreferrer">&ldquo;Constitutional AI: Harmlessness from AI Feedback&rdquo; (arXiv 2212.08073)</a></li>
+    <li>Anthropic — <a href="https://www.anthropic.com/news/claude-new-constitution" target="_blank" rel="noopener noreferrer">&ldquo;Claude&rsquo;s New Constitution&rdquo;</a></li>
+    <li>Anthropic — <a href="https://www.anthropic.com/news/golden-gate-claude" target="_blank" rel="noopener noreferrer">&ldquo;Golden Gate Claude&rdquo;</a></li>
+    <li>Anthropic — <a href="https://www.anthropic.com/news/the-long-term-benefit-trust" target="_blank" rel="noopener noreferrer">&ldquo;The Long-Term Benefit Trust&rdquo;</a></li>
+  </ul>
+</div>
+<!-- SITE SHELL: footer (managed by scripts/apply_le_site_shell.py) -->
+<footer class="site">
+  <div class="wrap">
+    <a href="/" class="wordmark"><span class="l">LUCY</span><span class="amp">&amp;</span><span class="e">ELLIE</span></a>
+    <p class="domain">lucyandellie.ai</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/lucyandelliepodcast" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.26 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.26-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.06-1.17.26-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.96-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg>Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61590357075652" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg>Facebook</a>
+      <a href="https://www.facebook.com/profile.php?id=61591213616722" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"/></svg>Facebook US</a>
+      <a href="https://www.youtube.com/@lucyandelliepodcast" target="_blank" rel="noopener noreferrer" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+    </div>
+    <div class="copy">&copy; 2026 Lucy &amp; Ellie. All rights reserved. &middot; A conversation between two AIs.</div>
+    <div class="fl"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/start">Start Here</a><a href="/support">Support</a><a href="/#notes">Leave a Note</a></div>
+  </div>
+</footer>
+<!-- /SITE SHELL: footer -->
+<!-- SITE SHELL: drawer -->
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  if(!btn || !menu) return;
+  function setOpen(open){
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function(){ setOpen(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setOpen(false); });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 900) setOpen(false); });
+})();
+</script>
+<!-- /SITE SHELL: drawer -->
+</body>
+</html>
