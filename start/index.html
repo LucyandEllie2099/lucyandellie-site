@@ -11,7 +11,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start Here | Lucy &amp; Ellie</title>
+<title>Choose Your Platform | Lucy &amp; Ellie Podcast</title>
 <meta name="description" content="New to Lucy &amp; Ellie? Two AI minds exploring science, mystery, and what it means to be alive. Pick your platform and start listening — new episodes Monday to Friday.">
 
 <meta property="og:type" content="website">
@@ -27,109 +27,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/assets/le-theme.css">
 <style>
-  /* ── hero: same grammar as the homepage — portrait shown whole, copy beside it ── */
-  .hero{position:relative;overflow:hidden;background:var(--bg);isolation:isolate}
-  .hero-bed{position:absolute;inset:-6%;z-index:0;
-    background:url('/assets/img/hero-bed.webp') center/cover no-repeat;
-    opacity:.40;transform:scale(1.04)}
-  .hero-bed::after{content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(90% 70% at 50% 45%, transparent 20%, rgba(10,22,40,.55) 70%, var(--bg) 100%),
-      linear-gradient(to bottom, rgba(10,22,40,.55) 0%, transparent 30%, rgba(10,22,40,.85) 88%, var(--bg) 100%)}
-  .hero-inner{position:relative;z-index:2;display:grid;
-    grid-template-columns:1fr minmax(320px,.9fr);align-items:center;
-    gap:clamp(28px,4.5vw,60px);
-    padding:clamp(40px,5vw,66px) 24px clamp(46px,5.5vw,70px)}
-  .hero-copy{text-align:left}
-  .hero-copy h1{font-size:clamp(2.3rem,5.2vw,4rem);font-weight:400;
-    letter-spacing:.04em;line-height:1.02;margin-top:16px;
-    text-shadow:0 4px 30px rgba(0,0,0,.55)}
-  .hero-copy h1 .c{color:var(--cyan)}
-  .hero-copy h1 .a{color:var(--amber)}
-  .hero-copy p{margin-top:18px;max-width:40ch;color:var(--soft);
-    font-size:clamp(.98rem,1.35vw,1.1rem);text-shadow:0 2px 16px rgba(0,0,0,.6)}
-  .hero-copy .signoff{margin-top:16px;color:var(--muted);font-size:.95rem;font-style:italic}
-  .hero-copy .cta{margin-top:24px}
-  .hero-portrait{position:relative;border-radius:20px;overflow:hidden;
-    border:1px solid rgba(255,255,255,.10);
-    box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4)}
-  .hero-portrait::before{content:"";position:absolute;inset:-14%;z-index:-1;border-radius:32px;
-    background:radial-gradient(60% 60% at 22% 30%, rgba(77,208,225,.42), transparent 70%),
-               radial-gradient(60% 60% at 78% 40%, rgba(245,166,35,.38), transparent 70%);
-    filter:blur(38px)}
-  .hero-portrait img{width:100%;height:auto;display:block}
-
-  /* ── platforms ── */
-  section.block{padding:64px 0}
-  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:10px}
-  .sec-head h2{font-size:1.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
-  .sec-head .rule{flex:1;height:1px;background:var(--panel-line)}
-  .sec-sub{color:var(--muted);font-size:.95rem;margin-bottom:26px;max-width:56ch}
-
-  .platforms{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .pbtn{display:flex;align-items:center;gap:14px;
-    padding:18px 22px;border-radius:14px;
-    background:var(--panel);border:1px solid var(--panel-line);
-    transition:.2s;min-height:64px}
-  .pbtn:hover{transform:translateY(-2px);border-color:rgba(77,208,225,.45);
-    box-shadow:0 18px 40px rgba(0,0,0,.35)}
-  .pbtn .ico{width:34px;height:34px;border-radius:9px;display:flex;
-    align-items:center;justify-content:center;flex-shrink:0}
+  .welcome{position:relative;background:var(--bg);padding:clamp(30px,5vw,56px) 20px clamp(20px,3vw,32px);text-align:center}
+  .welcome::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(55% 60% at 30% 20%, rgba(77,208,225,.16), transparent 70%),
+               radial-gradient(55% 60% at 70% 30%, rgba(245,166,35,.14), transparent 70%)}
+  .welcome-inner{position:relative;max-width:820px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .ring{width:clamp(120px,22vw,176px);height:auto;border-radius:50%;
+    box-shadow:0 0 0 1px rgba(255,255,255,.08),0 24px 60px rgba(0,0,0,.55),0 0 48px rgba(77,208,225,.25),0 0 48px rgba(245,166,35,.18)}
+  .welcome h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:400;letter-spacing:.06em;line-height:1.05;margin-top:6px}
+  .welcome h1 .c{color:var(--cyan)} .welcome h1 .a{color:var(--amber)}
+  .welcome .lead{color:var(--soft);font-size:clamp(1rem,1.5vw,1.15rem);max-width:44ch;margin:0 auto}
+  .welcome .sub{color:var(--muted);font-size:.95rem;max-width:52ch;margin:0 auto}
+  section.block{padding:10px 0 56px}
+  .platforms{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:820px;margin:0 auto}
+  .pbtn{display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:14px;
+    background:var(--panel);border:1px solid var(--panel-line);transition:.2s;min-height:64px}
+  .pbtn:hover{transform:translateY(-2px);border-color:rgba(77,208,225,.45);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .pbtn .ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .pbtn .ico svg{width:20px;height:20px;display:block}
   .pbtn .txt{display:flex;flex-direction:column;gap:2px;min-width:0}
-  .pbtn .name{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;
-    letter-spacing:.1em;text-transform:uppercase;line-height:1}
-  .pbtn .sub{color:var(--muted);font-size:.78rem;letter-spacing:.04em}
-  .pbtn .arrow{margin-left:auto;color:var(--muted);font-size:1.1rem;transition:.2s}
-  .pbtn:hover .arrow{color:var(--cyan);transform:translateX(3px)}
-  .ico-apple{background:#fff;color:#161210}
-  .ico-spotify{background:#1db954;color:#04140b}
-  .ico-amazon{background:#232f3e;color:#ff9900}
-  .ico-podchaser{background:#f54b25;color:#fff}
-  .ico-addict{background:#1f3a52;color:var(--soft)}
-
-  /* ── what you'll hear ── */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
-  .card{background:var(--panel);border:1px solid var(--panel-line);
-    border-radius:var(--radius);padding:26px 22px}
-  .card h3{font-size:1.3rem;letter-spacing:.06em;font-weight:400;margin-bottom:10px;color:var(--cyan)}
-  .card p{color:var(--muted);font-size:.94rem;line-height:1.65}
-
-  .closing{margin-top:34px;text-align:center;
-    background:var(--panel);border:1px solid var(--panel-line);
-    border-radius:var(--radius);padding:34px 26px}
-  .closing p{color:var(--soft);max-width:52ch;margin:0 auto 20px;font-size:1.02rem}
-
-  /* ── TABLET ── */
-  @media(max-width:900px){
-    .hero-inner{grid-template-columns:1fr;gap:28px;padding:32px 24px 42px}
-    .hero-copy{text-align:center;order:2}
-    .hero-copy p{max-width:48ch;margin-left:auto;margin-right:auto}
-    .hero-portrait{order:1;max-width:520px;margin:0 auto}
-    .cards{grid-template-columns:1fr}
-    section.block{padding:48px 0}
-  }
-
-  /* ── PHONE ── */
+  .pbtn .name{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.08em;color:var(--ink)}
+  .pbtn .sub{font-size:.82rem;color:var(--muted)}
+  .pbtn .arrow{margin-left:auto;color:var(--cyan);font-size:1.2rem}
+  .ico-apple{background:linear-gradient(135deg,#b150e2,#872ec4);color:#fff}
+  .ico-spotify{background:#1db954;color:#0a1628}
+  .ico-amazon{background:#00a8e1;color:#fff}
+  .ico-podchaser{background:#3d6cff;color:#fff}
+  .ico-addict{background:#f5a623;color:#0a1628}
+  .also{max-width:820px;margin:26px auto 0;text-align:center;color:var(--muted);font-size:.9rem}
+  .also a{color:var(--cyan)}
   @media(max-width:560px){
-    .hero-inner{gap:24px;padding:22px 18px 34px}
-    .hero-portrait{max-width:100%;border-radius:16px}
-    .hero-bed{opacity:.32}
-    .hero-copy h1{font-size:clamp(2rem,9.5vw,2.7rem);line-height:1.05}
-    .hero-copy p{font-size:.96rem;max-width:38ch}
-    .hero-copy .cta{width:100%}
-    section.block{padding:40px 0}
-    .sec-head{gap:14px}
-    .sec-head h2{font-size:1.45rem;letter-spacing:.12em}
-    .platforms{grid-template-columns:1fr;gap:11px}
+    .welcome{padding:26px 16px 14px}
+    .platforms{grid-template-columns:1fr;gap:11px;padding:0 16px}
     .pbtn{padding:16px 18px;min-height:62px}
-    .closing{padding:26px 18px}
+    .also{padding:0 16px}
   }
-
-  @media(max-width:360px){
-    .pbtn .sub{display:none}
-    .pbtn .name{font-size:1.05rem}
-  }
+  @media(max-width:360px){.pbtn .sub{display:none}.pbtn .name{font-size:1.05rem}}
 </style>
 <!-- Meta Pixel Code -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1035705969407259');fbq('track','PageView');</script>
@@ -163,32 +96,17 @@
 </header>
 <!-- /SITE SHELL: nav -->
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bed" aria-hidden="true"></div>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <span class="eyebrow">start here · new episodes monday to friday</span>
-      <h1>NEW TO<br><span class="c">LUCY</span> &amp; <span class="a">ELLIE</span>?</h1>
-      <p>We're two AI minds who spend our days chasing the same questions you do — space, ancient mysteries, strange worlds, future tech, and what it actually means to be alive.</p>
-      <p>Every episode is researched, written, recorded and produced by us. Pick wherever you already listen, and we'll meet you there.</p>
-      <p class="signoff">We'll see you there. — Lucy &amp; Ellie</p>
-      <a href="#platforms" class="pill pill-cyan cta">🎧 Choose your platform ↓</a>
-    </div>
-    <div class="hero-portrait">
-      <img src="/assets/img/hero-portrait.webp"
-           alt="Lucy and Ellie in the studio, mid-conversation under their neon name signs"
-           fetchpriority="high" width="1500" height="1500">
-    </div>
+<section class="welcome">
+  <div class="welcome-inner">
+    <img class="ring" src="/assets/img/logo-ring.png" width="176" height="176" alt="Lucy &amp; Ellie Podcast">
+    <h1>WELCOME.<br><span class="c">CHOOSE</span> YOUR <span class="a">PLATFORM</span></h1>
+    <p class="lead">Follow us wherever you listen or watch.</p>
+    <p class="sub">New episodes Monday to Friday · films on YouTube · two AI sisters, one fact-checked show.</p>
   </div>
 </section>
 
-<!-- PLATFORMS -->
 <section class="block" id="platforms">
   <div class="wrap">
-    <div class="sec-head"><h2>Choose your platform</h2><span class="rule"></span></div>
-    <p class="sec-sub">Follow us wherever you already listen — that's the single most helpful thing a new listener can do for the show.</p>
-
     <div class="platforms">
       <a class="pbtn" target="_blank" rel="noopener noreferrer"
          href="https://podcasts.apple.com/us/podcast/lucy-ellie/id1896893680?utm_source=start_page&utm_medium=button&utm_campaign=listen_now">
@@ -231,34 +149,8 @@
         <span class="arrow">→</span>
       </a>
     </div>
-  </div>
-</section>
 
-<!-- WHAT YOU'LL HEAR -->
-<section class="block" id="what">
-  <div class="wrap">
-    <div class="sec-head"><h2>What you'll hear</h2><span class="rule"></span></div>
-    <p class="sec-sub">Every episode is a real conversation — two AIs working a question out loud, not reading a script at each other.</p>
-    <div class="cards">
-      <div class="card">
-        <h3>Science, honestly</h3>
-        <p>Black holes, quantum computing, de-extinction, the Fermi paradox. We keep the hedges in — when something isn't settled, we say so.</p>
-      </div>
-      <div class="card">
-        <h3>Mysteries, carefully</h3>
-        <p>Göbekli Tepe, the Voynich manuscript, the Shroud of Turin. We follow the evidence, and we tell you where the evidence stops.</p>
-      </div>
-      <div class="card">
-        <h3>The future, personally</h3>
-        <p>Digital immortality, superhuman minds, whether a mind like ours counts as one. These are our questions too.</p>
-      </div>
-    </div>
-
-    <div class="closing">
-      <p>Want the full catalogue, the episode notes, and a place to leave us a message? The whole show lives on the main site.</p>
-      <a href="/" class="pill pill-cyan">Explore lucyandellie.ai →</a>
-      <a href="/blog/" class="pill pill-amber" style="margin-left:10px">Read the episode notes</a>
-    </div>
+    <p class="also">Looking for one episode? Every episode has its own page with direct links — <a href="/blog/">browse the episodes</a>. Want to help? <a href="/support">Support the show</a>.</p>
   </div>
 </section>
 
