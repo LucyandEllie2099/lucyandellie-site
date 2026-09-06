@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lucy &amp; Ellie — Threads authorization</title>
+<style>
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+         background: #0f0f12; color: #f2f2f2; display: flex; min-height: 100vh; align-items: center; justify-content: center; }
+  main { max-width: 720px; padding: 32px 24px; text-align: center; }
+  h1 { font-size: 1.4rem; font-weight: 600; margin: 0 0 8px; }
+  p { color: #b8b8c0; margin: 8px 0; }
+  #code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1.6rem; line-height: 1.35;
+          word-break: break-all; background: #1b1b22; border: 1px solid #33333f; border-radius: 12px;
+          padding: 20px; margin: 20px 0; user-select: all; -webkit-user-select: all; }
+  button { font-size: 1.1rem; padding: 14px 28px; border: 0; border-radius: 999px; background: #ffffff; color: #111; cursor: pointer; }
+  button:active { transform: scale(0.98); }
+  #status { min-height: 1.4em; color: #8fd18f; }
+  .err { color: #ff8080; }
+  .big { font-size: 1.5rem; color: #fff; font-weight: 600; margin-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Threads authorization</h1>
+  <div id="code">…</div>
+  <button id="copy" type="button">Copy code</button>
+  <div id="status"></div>
+  <p class="big" id="hint">Paste this code to Lucy</p>
+  <p>Then you can close this tab.</p>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var code = (q.get("code") || "").replace(/#_$/, "");
+  var el = document.getElementById("code");
+  var st = document.getElementById("status");
+  var btn = document.getElementById("copy");
+  if (q.get("error")) {
+    el.className = "err";
+    el.textContent = "Threads said no: " + (q.get("error_description") || q.get("error_reason") || q.get("error"));
+    document.getElementById("hint").textContent = "Tell Lucy what it says above";
+    btn.style.display = "none";
+    return;
+  }
+  if (!code) {
+    el.className = "err";
+    el.textContent = "No code in this URL. Open this page from the Threads authorize link.";
+    document.getElementById("hint").textContent = "";
+    btn.style.display = "none";
+    return;
+  }
+  el.textContent = code;
+  btn.addEventListener("click", function () {
+    function ok() { st.textContent = "Copied — now paste it to Lucy."; }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try { document.execCommand("copy"); ok(); } catch (e) { st.textContent = "Select the code above and copy it."; }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(ok, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
