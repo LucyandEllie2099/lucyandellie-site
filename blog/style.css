@@ -195,3 +195,8 @@
 .film-btn.trailer{background:#1e78dc;color:#fff}
 .film-btn.sub{background:transparent;border:1px solid rgba(255,255,255,.35);color:inherit;font-weight:600}
 .film-btn:hover{transform:translateY(-2px)}
+
+/* ep-body: description + listen row moved below the film (2026-09-06) */
+.ep-body{padding:8px 24px 48px;text-align:center}
+@media(max-width:560px){.ep-body{padding:8px 18px 40px}}
+@media(max-width:360px){.ep-body{padding:8px 14px 36px}}
